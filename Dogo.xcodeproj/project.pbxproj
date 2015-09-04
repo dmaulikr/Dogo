@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D153C1E7CB655EDBEE98F51 /* libPods-Dogo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D5BCA0500DF83D419907FC /* libPods-Dogo.a */; };
+		5EEEBA771B99E36500D0AB9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEEBA761B99E36500D0AB9A /* main.m */; };
+		5EEEBA941B99E36600D0AB9A /* DogoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEEBA931B99E36600D0AB9A /* DogoTests.m */; };
+		5EF057E31B9A08E200A1F632 /* ChallengeSpecs in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D41B9A08E200A1F632 /* ChallengeSpecs */; };
+		5EF057E51B9A08E200A1F632 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D91B9A08E200A1F632 /* LaunchScreen.xib */; };
+		5EF057E61B9A08E200A1F632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057DB1B9A08E200A1F632 /* Main.storyboard */; };
+		5EF057E71B9A08E200A1F632 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057DD1B9A08E200A1F632 /* Images.xcassets */; };
+		5EF057E81B9A08E200A1F632 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF057E01B9A08E200A1F632 /* AppDelegate.m */; };
+		5EF057EC1B9A0A6500A1F632 /* Dogo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EF057EA1B9A0A6500A1F632 /* Dogo.xcdatamodeld */; };
+		5EF057EF1B9A0CDA00A1F632 /* Challenge JSON in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */; };
+		5EF9417F1B9A2C910010D997 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9417E1B9A2C910010D997 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5EEEBA8E1B99E36600D0AB9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5EEEBA691B99E36500D0AB9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5EEEBA701B99E36500D0AB9A;
+			remoteInfo = Dogo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5EEEBA711B99E36500D0AB9A /* Dogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EEEBA751B99E36500D0AB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EEEBA761B99E36500D0AB9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5EEEBA8D1B99E36600D0AB9A /* DogoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EEEBA921B99E36600D0AB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EEEBA931B99E36600D0AB9A /* DogoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogoTests.m; sourceTree = "<group>"; };
+		5EF057D41B9A08E200A1F632 /* ChallengeSpecs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChallengeSpecs; sourceTree = "<group>"; };
+		5EF057DA1B9A08E200A1F632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5EF057DC1B9A08E200A1F632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5EF057DD1B9A08E200A1F632 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5EF057DF1B9A08E200A1F632 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5EF057E01B9A08E200A1F632 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5EF057EB1B9A0A6500A1F632 /* Dogo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dogo.xcdatamodel; sourceTree = "<group>"; };
+		5EF057ED1B9A0B9300A1F632 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Challenge JSON"; sourceTree = "<group>"; };
+		5EF9417D1B9A2C910010D997 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5EF9417E1B9A2C910010D997 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		75D5BCA0500DF83D419907FC /* libPods-Dogo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dogo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DBDC106F539E8A88FE34543 /* Pods-Dogo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dogo/Pods-Dogo.debug.xcconfig"; sourceTree = "<group>"; };
+		ED697685EE6E59952D79EC9D /* Pods-Dogo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dogo/Pods-Dogo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EEEBA6E1B99E36500D0AB9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D153C1E7CB655EDBEE98F51 /* libPods-Dogo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EEEBA8A1B99E36600D0AB9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3118C1F817811143A2ECBB1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DBDC106F539E8A88FE34543 /* Pods-Dogo.debug.xcconfig */,
+				ED697685EE6E59952D79EC9D /* Pods-Dogo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5EEEBA681B99E36500D0AB9A = {
+			isa = PBXGroup;
+			children = (
+				5EEEBA731B99E36500D0AB9A /* Dogo */,
+				5EEEBA901B99E36600D0AB9A /* DogoTests */,
+				5EEEBA721B99E36500D0AB9A /* Products */,
+				3118C1F817811143A2ECBB1C /* Pods */,
+				92D8A0AA2D9C4A3806E9D3D6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5EEEBA721B99E36500D0AB9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5EEEBA711B99E36500D0AB9A /* Dogo.app */,
+				5EEEBA8D1B99E36600D0AB9A /* DogoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5EEEBA731B99E36500D0AB9A /* Dogo */ = {
+			isa = PBXGroup;
+			children = (
+				5EF057DE1B9A08E200A1F632 /* src */,
+				5EF057D31B9A08E200A1F632 /* docs */,
+				5EF057D81B9A08E200A1F632 /* res */,
+				5EEEBA741B99E36500D0AB9A /* Supporting Files */,
+			);
+			path = Dogo;
+			sourceTree = "<group>";
+		};
+		5EEEBA741B99E36500D0AB9A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EEEBA751B99E36500D0AB9A /* Info.plist */,
+				5EEEBA761B99E36500D0AB9A /* main.m */,
+				5EF057ED1B9A0B9300A1F632 /* Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = supporting;
+			sourceTree = "<group>";
+		};
+		5EEEBA901B99E36600D0AB9A /* DogoTests */ = {
+			isa = PBXGroup;
+			children = (
+				5EEEBA931B99E36600D0AB9A /* DogoTests.m */,
+				5EEEBA911B99E36600D0AB9A /* Supporting Files */,
+			);
+			path = DogoTests;
+			sourceTree = "<group>";
+		};
+		5EEEBA911B99E36600D0AB9A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5EEEBA921B99E36600D0AB9A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EF057D31B9A08E200A1F632 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				5EF057D41B9A08E200A1F632 /* ChallengeSpecs */,
+				5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		5EF057D81B9A08E200A1F632 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				5EF057D91B9A08E200A1F632 /* LaunchScreen.xib */,
+				5EF057DB1B9A08E200A1F632 /* Main.storyboard */,
+				5EF057DD1B9A08E200A1F632 /* Images.xcassets */,
+				5EF057EA1B9A0A6500A1F632 /* Dogo.xcdatamodeld */,
+			);
+			path = res;
+			sourceTree = "<group>";
+		};
+		5EF057DE1B9A08E200A1F632 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				5EF057DF1B9A08E200A1F632 /* AppDelegate.h */,
+				5EF057E01B9A08E200A1F632 /* AppDelegate.m */,
+				5EF9417D1B9A2C910010D997 /* ViewController.h */,
+				5EF9417E1B9A2C910010D997 /* ViewController.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		92D8A0AA2D9C4A3806E9D3D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75D5BCA0500DF83D419907FC /* libPods-Dogo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5EEEBA701B99E36500D0AB9A /* Dogo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EEEBA971B99E36600D0AB9A /* Build configuration list for PBXNativeTarget "Dogo" */;
+			buildPhases = (
+				FA9E621975E4D5E2C83D803B /* Check Pods Manifest.lock */,
+				5EEEBA6D1B99E36500D0AB9A /* Sources */,
+				5EEEBA6E1B99E36500D0AB9A /* Frameworks */,
+				5EEEBA6F1B99E36500D0AB9A /* Resources */,
+				5E5D5D8DAA71E09C7FD53E95 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dogo;
+			productName = Dogo;
+			productReference = 5EEEBA711B99E36500D0AB9A /* Dogo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5EEEBA8C1B99E36600D0AB9A /* DogoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EEEBA9A1B99E36600D0AB9A /* Build configuration list for PBXNativeTarget "DogoTests" */;
+			buildPhases = (
+				5EEEBA891B99E36600D0AB9A /* Sources */,
+				5EEEBA8A1B99E36600D0AB9A /* Frameworks */,
+				5EEEBA8B1B99E36600D0AB9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EEEBA8F1B99E36600D0AB9A /* PBXTargetDependency */,
+			);
+			name = DogoTests;
+			productName = DogoTests;
+			productReference = 5EEEBA8D1B99E36600D0AB9A /* DogoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5EEEBA691B99E36500D0AB9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Marsal Silveira";
+				TargetAttributes = {
+					5EEEBA701B99E36500D0AB9A = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					5EEEBA8C1B99E36600D0AB9A = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 5EEEBA701B99E36500D0AB9A;
+					};
+				};
+			};
+			buildConfigurationList = 5EEEBA6C1B99E36500D0AB9A /* Build configuration list for PBXProject "Dogo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5EEEBA681B99E36500D0AB9A;
+			productRefGroup = 5EEEBA721B99E36500D0AB9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5EEEBA701B99E36500D0AB9A /* Dogo */,
+				5EEEBA8C1B99E36600D0AB9A /* DogoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5EEEBA6F1B99E36500D0AB9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EF057E61B9A08E200A1F632 /* Main.storyboard in Resources */,
+				5EF057E71B9A08E200A1F632 /* Images.xcassets in Resources */,
+				5EF057E51B9A08E200A1F632 /* LaunchScreen.xib in Resources */,
+				5EF057EF1B9A0CDA00A1F632 /* Challenge JSON in Resources */,
+				5EF057E31B9A08E200A1F632 /* ChallengeSpecs in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EEEBA8B1B99E36600D0AB9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E5D5D8DAA71E09C7FD53E95 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Dogo/Pods-Dogo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA9E621975E4D5E2C83D803B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5EEEBA6D1B99E36500D0AB9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EEEBA771B99E36500D0AB9A /* main.m in Sources */,
+				5EF057EC1B9A0A6500A1F632 /* Dogo.xcdatamodeld in Sources */,
+				5EF9417F1B9A2C910010D997 /* ViewController.m in Sources */,
+				5EF057E81B9A08E200A1F632 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5EEEBA891B99E36600D0AB9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5EEEBA941B99E36600D0AB9A /* DogoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EEEBA8F1B99E36600D0AB9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5EEEBA701B99E36500D0AB9A /* Dogo */;
+			targetProxy = 5EEEBA8E1B99E36600D0AB9A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5EF057D91B9A08E200A1F632 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EF057DA1B9A08E200A1F632 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		5EF057DB1B9A08E200A1F632 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5EF057DC1B9A08E200A1F632 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5EEEBA951B99E36600D0AB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5EEEBA961B99E36600D0AB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5EEEBA981B99E36600D0AB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DBDC106F539E8A88FE34543 /* Pods-Dogo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Dogo/supporting/Prefix.pch;
+				INFOPLIST_FILE = Dogo/supporting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5EEEBA991B99E36600D0AB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED697685EE6E59952D79EC9D /* Pods-Dogo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Dogo/supporting/Prefix.pch;
+				INFOPLIST_FILE = Dogo/supporting/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5EEEBA9B1B99E36600D0AB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DogoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dogo.app/Dogo";
+			};
+			name = Debug;
+		};
+		5EEEBA9C1B99E36600D0AB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DogoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dogo.app/Dogo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5EEEBA6C1B99E36500D0AB9A /* Build configuration list for PBXProject "Dogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EEEBA951B99E36600D0AB9A /* Debug */,
+				5EEEBA961B99E36600D0AB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EEEBA971B99E36600D0AB9A /* Build configuration list for PBXNativeTarget "Dogo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EEEBA981B99E36600D0AB9A /* Debug */,
+				5EEEBA991B99E36600D0AB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5EEEBA9A1B99E36600D0AB9A /* Build configuration list for PBXNativeTarget "DogoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EEEBA9B1B99E36600D0AB9A /* Debug */,
+				5EEEBA9C1B99E36600D0AB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5EF057EA1B9A0A6500A1F632 /* Dogo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5EF057EB1B9A0A6500A1F632 /* Dogo.xcdatamodel */,
+			);
+			currentVersion = 5EF057EB1B9A0A6500A1F632 /* Dogo.xcdatamodel */;
+			path = Dogo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5EEEBA691B99E36500D0AB9A /* Project object */;
+}
