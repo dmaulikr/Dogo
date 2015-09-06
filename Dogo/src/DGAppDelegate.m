@@ -1,21 +1,22 @@
 //
-//  AppDelegate.m
+//  DGAppDelegate.m
 //  Dogo
 //
 //  Created by Marsal on 04/09/15.
 //  Copyright (c) 2015 Marsal Silveira. All rights reserved.
 //
 
-@interface AppDelegate ()
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import <AFNetworkActivityLogger/AFNetworkActivityLogger.h>
 
-@end
-
-@implementation AppDelegate
-
+@implementation DGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // enable AFNetwork logger and network activity indicator
+    [[AFNetworkActivityLogger sharedLogger] startLogging];
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+
     return YES;
 }
 

@@ -4,6 +4,8 @@
 target 'Dogo' do
 
 pod 'AFNetworking'
+pod 'AFNetworkActivityLogger'
+pod 'MBProgressHUD'
 
 end
 

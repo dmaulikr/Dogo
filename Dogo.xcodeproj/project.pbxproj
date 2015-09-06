@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		0D153C1E7CB655EDBEE98F51 /* libPods-Dogo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D5BCA0500DF83D419907FC /* libPods-Dogo.a */; };
+		5E51411C1B9BA09300E2726C /* DGArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5141121B9BA09300E2726C /* DGArticle.m */; };
+		5E5141301B9BAC7600E2726C /* DGArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5141271B9BAC7600E2726C /* DGArticlesViewController.m */; };
+		5E5141311B9BAC7600E2726C /* DGArticleBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E51412A1B9BAC7600E2726C /* DGArticleBasicCell.m */; };
+		5E5141321B9BAC7600E2726C /* DGArticleFullCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E51412C1B9BAC7600E2726C /* DGArticleFullCell.m */; };
 		5EEEBA771B99E36500D0AB9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEEBA761B99E36500D0AB9A /* main.m */; };
 		5EEEBA941B99E36600D0AB9A /* DogoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEEBA931B99E36600D0AB9A /* DogoTests.m */; };
-		5EF057E31B9A08E200A1F632 /* ChallengeSpecs in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D41B9A08E200A1F632 /* ChallengeSpecs */; };
+		5EF057E31B9A08E200A1F632 /* Challenge Specs in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D41B9A08E200A1F632 /* Challenge Specs */; };
 		5EF057E51B9A08E200A1F632 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D91B9A08E200A1F632 /* LaunchScreen.xib */; };
 		5EF057E61B9A08E200A1F632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057DB1B9A08E200A1F632 /* Main.storyboard */; };
 		5EF057E71B9A08E200A1F632 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057DD1B9A08E200A1F632 /* Images.xcassets */; };
-		5EF057E81B9A08E200A1F632 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF057E01B9A08E200A1F632 /* AppDelegate.m */; };
+		5EF057E81B9A08E200A1F632 /* DGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF057E01B9A08E200A1F632 /* DGAppDelegate.m */; };
 		5EF057EC1B9A0A6500A1F632 /* Dogo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EF057EA1B9A0A6500A1F632 /* Dogo.xcdatamodeld */; };
 		5EF057EF1B9A0CDA00A1F632 /* Challenge JSON in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */; };
-		5EF9417F1B9A2C910010D997 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9417E1B9A2C910010D997 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,23 +34,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E5141111B9BA09300E2726C /* DGArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticle.h; sourceTree = "<group>"; };
+		5E5141121B9BA09300E2726C /* DGArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticle.m; sourceTree = "<group>"; };
+		5E5141261B9BAC7600E2726C /* DGArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticlesViewController.h; sourceTree = "<group>"; };
+		5E5141271B9BAC7600E2726C /* DGArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticlesViewController.m; sourceTree = "<group>"; };
+		5E5141291B9BAC7600E2726C /* DGArticleBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleBasicCell.h; sourceTree = "<group>"; };
+		5E51412A1B9BAC7600E2726C /* DGArticleBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleBasicCell.m; sourceTree = "<group>"; };
+		5E51412B1B9BAC7600E2726C /* DGArticleFullCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleFullCell.h; sourceTree = "<group>"; };
+		5E51412C1B9BAC7600E2726C /* DGArticleFullCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleFullCell.m; sourceTree = "<group>"; };
 		5EEEBA711B99E36500D0AB9A /* Dogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EEEBA751B99E36500D0AB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EEEBA761B99E36500D0AB9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5EEEBA8D1B99E36600D0AB9A /* DogoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EEEBA921B99E36600D0AB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EEEBA931B99E36600D0AB9A /* DogoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogoTests.m; sourceTree = "<group>"; };
-		5EF057D41B9A08E200A1F632 /* ChallengeSpecs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChallengeSpecs; sourceTree = "<group>"; };
+		5EF057D41B9A08E200A1F632 /* Challenge Specs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Challenge Specs"; sourceTree = "<group>"; };
 		5EF057DA1B9A08E200A1F632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5EF057DC1B9A08E200A1F632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EF057DD1B9A08E200A1F632 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5EF057DF1B9A08E200A1F632 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5EF057E01B9A08E200A1F632 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5EF057DF1B9A08E200A1F632 /* DGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGAppDelegate.h; sourceTree = "<group>"; };
+		5EF057E01B9A08E200A1F632 /* DGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGAppDelegate.m; sourceTree = "<group>"; };
 		5EF057EB1B9A0A6500A1F632 /* Dogo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dogo.xcdatamodel; sourceTree = "<group>"; };
 		5EF057ED1B9A0B9300A1F632 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Challenge JSON"; sourceTree = "<group>"; };
-		5EF9417D1B9A2C910010D997 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5EF9417E1B9A2C910010D997 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		75D5BCA0500DF83D419907FC /* libPods-Dogo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dogo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBDC106F539E8A88FE34543 /* Pods-Dogo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dogo/Pods-Dogo.debug.xcconfig"; sourceTree = "<group>"; };
 		ED697685EE6E59952D79EC9D /* Pods-Dogo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dogo/Pods-Dogo.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +90,35 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5E5141101B9BA09300E2726C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E5141111B9BA09300E2726C /* DGArticle.h */,
+				5E5141121B9BA09300E2726C /* DGArticle.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E5141231B9BAC7600E2726C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E5141261B9BAC7600E2726C /* DGArticlesViewController.h */,
+				5E5141271B9BAC7600E2726C /* DGArticlesViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E5141281B9BAC7600E2726C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E5141291B9BAC7600E2726C /* DGArticleBasicCell.h */,
+				5E51412A1B9BAC7600E2726C /* DGArticleBasicCell.m */,
+				5E51412B1B9BAC7600E2726C /* DGArticleFullCell.h */,
+				5E51412C1B9BAC7600E2726C /* DGArticleFullCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5EEEBA681B99E36500D0AB9A = {
 			isa = PBXGroup;
 			children = (
@@ -105,9 +143,9 @@
 			isa = PBXGroup;
 			children = (
 				5EF057DE1B9A08E200A1F632 /* src */,
-				5EF057D31B9A08E200A1F632 /* docs */,
 				5EF057D81B9A08E200A1F632 /* res */,
 				5EEEBA741B99E36500D0AB9A /* Supporting Files */,
+				5EF057D31B9A08E200A1F632 /* docs */,
 			);
 			path = Dogo;
 			sourceTree = "<group>";
@@ -143,7 +181,7 @@
 		5EF057D31B9A08E200A1F632 /* docs */ = {
 			isa = PBXGroup;
 			children = (
-				5EF057D41B9A08E200A1F632 /* ChallengeSpecs */,
+				5EF057D41B9A08E200A1F632 /* Challenge Specs */,
 				5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */,
 			);
 			path = docs;
@@ -163,10 +201,11 @@
 		5EF057DE1B9A08E200A1F632 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				5EF057DF1B9A08E200A1F632 /* AppDelegate.h */,
-				5EF057E01B9A08E200A1F632 /* AppDelegate.m */,
-				5EF9417D1B9A2C910010D997 /* ViewController.h */,
-				5EF9417E1B9A2C910010D997 /* ViewController.m */,
+				5EF057DF1B9A08E200A1F632 /* DGAppDelegate.h */,
+				5EF057E01B9A08E200A1F632 /* DGAppDelegate.m */,
+				5E5141101B9BA09300E2726C /* Model */,
+				5E5141231B9BAC7600E2726C /* Controller */,
+				5E5141281B9BAC7600E2726C /* View */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -244,6 +283,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pt,
 			);
 			mainGroup = 5EEEBA681B99E36500D0AB9A;
 			productRefGroup = 5EEEBA721B99E36500D0AB9A /* Products */;
@@ -265,7 +305,7 @@
 				5EF057E71B9A08E200A1F632 /* Images.xcassets in Resources */,
 				5EF057E51B9A08E200A1F632 /* LaunchScreen.xib in Resources */,
 				5EF057EF1B9A0CDA00A1F632 /* Challenge JSON in Resources */,
-				5EF057E31B9A08E200A1F632 /* ChallengeSpecs in Resources */,
+				5EF057E31B9A08E200A1F632 /* Challenge Specs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,10 +356,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5141321B9BAC7600E2726C /* DGArticleFullCell.m in Sources */,
 				5EEEBA771B99E36500D0AB9A /* main.m in Sources */,
+				5E51411C1B9BA09300E2726C /* DGArticle.m in Sources */,
+				5E5141301B9BAC7600E2726C /* DGArticlesViewController.m in Sources */,
+				5E5141311B9BAC7600E2726C /* DGArticleBasicCell.m in Sources */,
 				5EF057EC1B9A0A6500A1F632 /* Dogo.xcdatamodeld in Sources */,
-				5EF9417F1B9A2C910010D997 /* ViewController.m in Sources */,
-				5EF057E81B9A08E200A1F632 /* AppDelegate.m in Sources */,
+				5EF057E81B9A08E200A1F632 /* DGAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,117 @@
+Data: 09/09
+
+The main goal of this challenge is to analyze the skills and knowledge the applicant presents related to iOS programming and its latest trends, as well as his/her ability to write code, comments and meaningful git commits.
+
+The applicant must develop an iOS app written in Objetive-C that fetches the JSON list of articles available through the endpoint http://www.ckl.io/challenge/ and present them in a list. Here are the MVP and extra tasks that will be evaluated.
+
+MVP
+- Create a public repository on GitHub and add @vitchor;
+- Create a UITableView with the articles (title, date, author and image);
+- Ability to visualize content (all provided info);
+- Ability to sort articles by any field (date, title, website, etc);
+- Ability to mark articles as read;
+- Create a pull-request and assign it to @vitchor.
+
+Extras
+- Use cool GitHub libraries to aid the development;
+- Tablet-adaptive layout;
+- Persistent info;
+- Images showing up both in the list and in the content viewer;
+- Design tweaks: animation, icons, etc;
+- Use a dependency manager;
+- Network error handling.
+
+Evaluation criteria
+- Technical capacity;
+- Knowledge on the platform;
+- Knowledge on the used tools;
+- Code readability;
+- Code reusability;
+- Clarity on descriptive texts;
+
+
+
+
+
+@import EventKit;
+-(void)sortMyArray
+{
+static BOOL chalala;
+NSString *descriptor;
+
+if (chalala) {
+chalala = false;
+descriptor = @"title";
+} else {
+chalala = true;
+descriptor = @"author";
+}
+
+NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:descriptor ascending:YES];
+NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+[_articles sortUsingDescriptors:sortDescriptors];
+}
+
+
+- (void)refreshArticles
+{
+DGLog(@"");
+
+//1
+NSURL *url = [NSURL URLWithString: DogoBaseURLString];
+NSURLRequest *request = [NSURLRequest requestWithURL: url];
+
+//2
+AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest: request];
+operation.responseSerializer = [AFJSONResponseSerializer serializer];
+
+//    __weak typeof(self) weakSelf = self;
+[operation setCompletionBlockWithSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
+
+[self reloadTableView];
+//        [self hideProgressHUD];
+
+//3
+_articles = [[NSMutableArray alloc] init];
+DGArticle *article;
+NSArray *result = (NSArray *) responseObject;
+for (NSDictionary *dict in result) {
+article = [[DGArticle alloc] init];
+article.website = [dict valueForKey:@"website"];
+article.title = [dict valueForKey:@"title"];
+article.authors = [dict valueForKey:@"authors"];
+article.date = [dict valueForKey:@"date"];
+article.imageURL = [dict valueForKey:@"image"];
+article.content = [dict valueForKey:@"content"];
+[_articles addObject:article];
+}
+[self.tableView reloadData];
+
+} failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
+
+//4
+UIAlertView *alertView = [[UIAlertView alloc] initWithTitle: @"Error Retrieving Wetaher"
+message: [error localizedDescription]
+delegate: nil
+cancelButtonTitle: @"OK"
+otherButtonTitles: nil];
+[alertView show];
+
+//        [self hideProgressHUD];
+DGLog(@"Error: %@", error);
+}];
+
+//5
+[operation start];
+}
+
+- (void)reloadTableView
+{
+dispatch_async(dispatch_get_main_queue(), ^{
+[self.tableView reloadData];
+[self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:NO];
+});
+}
+
+
+static NSString *const DogoBaseURLString = @"http://www.ckl.io/challenge";
