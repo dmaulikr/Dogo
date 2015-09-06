@@ -10,11 +10,11 @@
 
 #import "DGArticle.h"
 #import "DGArticleCell.h"
+#import "DGArticleDetailViewController.h"
 
 #import <MBProgressHUD/MBProgressHUD.h>
 
 #import <AFNetworking/AFNetworking.h>
-#import "UIImageView+AFNetworking.h"
 
 @interface DGArticlesViewController()
 
@@ -24,7 +24,7 @@
 
 @implementation DGArticlesViewController
 
-#pragma mark - Get Artciles from web
+#pragma mark - Get Articles from web
 //TODO: Workaround... this behavior must be encapsulated in another class/concept
 
 static NSString *const DogoBaseURLString = @"http://www.ckl.io/challenge";
@@ -90,6 +90,16 @@ static NSString *const ArticleCellWithImageIdentifier = @"ArticleCellWithImage";
     [super viewDidLoad];
     
     [self refreshArticles];
+}
+
+#pragma mark - <Navigation>
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    DGArticle *article = _articles[indexPath.row];
+    DGArticleDetailViewController *viewController = [segue destinationViewController];
+    viewController.article = article;
 }
 
 #pragma mark - <UITableView>
