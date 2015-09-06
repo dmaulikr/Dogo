@@ -9,8 +9,7 @@
 #import "DGArticlesViewController.h"
 
 #import "DGArticle.h"
-#import "DGArticleBasicCell.h"
-#import "DGArticleFullCell.h"
+#import "DGArticleCell.h"
 
 #import <MBProgressHUD/MBProgressHUD.h>
 
@@ -61,16 +60,13 @@ static NSString *const DogoBaseURLString = @"http://www.ckl.io/challenge";
         
         // if occurs any error show it to user and cancel operation
         UIAlertController *alertController = [UIAlertController
-                                              alertControllerWithTitle:@"Error Retrieving Articles"
+                                              alertControllerWithTitle:NSLocalizedString(@"[Error Retrieving Articles]", nil)
                                               message:[error localizedDescription]
                                               preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                   actionWithTitle:NSLocalizedString(@"[OK]", nil)
                                    style:UIAlertActionStyleDefault
-                                   handler:^(UIAlertAction *action)
-                                   {
-                                       NSLog(@"OK action");
-                                   }];
+                                   handler:nil];
         [alertController addAction:okAction];
         [self presentViewController:alertController animated:YES completion:nil];
         
@@ -84,8 +80,8 @@ static NSString *const DogoBaseURLString = @"http://www.ckl.io/challenge";
 
 #pragma mark - Constants
 
-static NSString *const DGArticleFullCellIdentifier = @"DGArticleFullCell";
-static NSString *const DGArticleBasicCellIdentifier = @"DGArticleBasicCell";
+static NSString *const ArticleCellIdentifier = @"ArticleCell";
+static NSString *const ArticleCellWithImageIdentifier = @"ArticleCellWithImage";
 
 #pragma mark - <UIViewController> Lifecycle
 
@@ -100,6 +96,7 @@ static NSString *const DGArticleBasicCellIdentifier = @"DGArticleBasicCell";
 
 - (void)reloadTableView
 {
+    // this must be executed in the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
@@ -114,11 +111,15 @@ static NSString *const DGArticleBasicCellIdentifier = @"DGArticleBasicCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // get correct cell design and load article fields into it
+    DGArticleCell *cell;
     if ([self hasImageAtIndexPath:indexPath]) {
-        return [self galleryCellAtIndexPath:indexPath];
+        cell = [self.tableView dequeueReusableCellWithIdentifier:ArticleCellWithImageIdentifier forIndexPath:indexPath];
     } else {
-        return [self basicCellAtIndexPath:indexPath];
+        cell = [self.tableView dequeueReusableCellWithIdentifier:ArticleCellIdentifier forIndexPath:indexPath];
     }
+    [cell loadArticle:_articles[indexPath.row]];
+    return cell;
 }
 
 - (BOOL)hasImageAtIndexPath:(NSIndexPath *)indexPath
@@ -127,60 +128,7 @@ static NSString *const DGArticleBasicCellIdentifier = @"DGArticleBasicCell";
     return article.imageURL;
 }
 
-- (DGArticleFullCell *)galleryCellAtIndexPath:(NSIndexPath *)indexPath
-{
-    DGArticleFullCell *cell = [self.tableView dequeueReusableCellWithIdentifier:DGArticleFullCellIdentifier forIndexPath:indexPath];
-    [self configureImageCell:cell atIndexPath:indexPath];
-    return cell;
-}
-
-- (void)configureImageCell:(DGArticleFullCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    DGArticle *article = _articles[indexPath.row];
-    
-    // website
-    cell.lblWebsite.text = article.website;
-    // authors + date
-    cell.lblAuthors.text = [NSString stringWithFormat:@"by %@ on %@", article.authors, article.date];
-    // image
-    [cell.imgViewThumb setImage:nil];
-    [cell.imgViewThumb setImageWithURL:[NSURL URLWithString:article.imageURL]];
-    // title
-    cell.lblTitle.text = article.title ?: NSLocalizedString(@"[No Title]", nil);
-    // content (justified)
-    NSString *content = article.content;
-    NSMutableParagraphStyle *paragraphStyles = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyles.alignment = NSTextAlignmentJustified;
-    paragraphStyles.firstLineHeadIndent = 0.1; // this is necessary to make work
-    cell.lblContent.attributedText = [[NSAttributedString alloc] initWithString:content attributes:@{NSParagraphStyleAttributeName: paragraphStyles}];
-}
-
-- (DGArticleBasicCell *)basicCellAtIndexPath:(NSIndexPath *)indexPath
-{
-    DGArticleBasicCell *cell = [self.tableView dequeueReusableCellWithIdentifier:DGArticleBasicCellIdentifier forIndexPath:indexPath];
-    [self configureBasicCell:cell atIndexPath:indexPath];
-    return cell;
-}
-
-- (void)configureBasicCell:(DGArticleBasicCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-    DGArticle *article = _articles[indexPath.row];
-    // website
-    cell.lblWebsite.text = article.website;
-    // authors + date
-    cell.lblAuthors.text = [NSString stringWithFormat:@"by %@ on %@", article.authors, article.date];
-    // title
-    cell.lblTitle.text = article.title ?: NSLocalizedString(@"[No Title]", nil);
-    // content
-    cell.lblContent.text = article.content;
-}
-
 #pragma mark - <UITableViewDelegate>
-
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return UITableViewAutomaticDimension;
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -196,7 +144,7 @@ static NSString *const DGArticleBasicCellIdentifier = @"DGArticleBasicCell";
 - (void)showProgressHUD
 {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [[MBProgressHUD HUDForView:self.view] setLabelText:@"Loading"];
+    [[MBProgressHUD HUDForView:self.view] setLabelText:NSLocalizedString(@"[Loading]", nil)];
 }
 
 - (void)hideProgressHUD
