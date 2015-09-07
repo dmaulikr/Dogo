@@ -9,6 +9,7 @@
 #import "DGArticleCell.h"
 
 #import "UIImageView+AFNetworking.h"
+#import "UIColor+Dogo.h"
 
 @implementation DGArticleCell
 
@@ -31,6 +32,9 @@
     paragraphStyles.alignment = NSTextAlignmentJustified;
     paragraphStyles.firstLineHeadIndent = 0.1; // this is necessary to make work
     _lblContent.attributedText = [[NSAttributedString alloc] initWithString:content attributes:@{NSParagraphStyleAttributeName: paragraphStyles}];
+    
+    // if article alredy is read change the background color
+    self.backgroundColor = (article.read) ? [UIColor backgroundColor] : [UIColor whiteColor];
 }
 
 @end

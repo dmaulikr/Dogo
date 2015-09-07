@@ -11,11 +11,21 @@
  */
 @interface DGArticle : NSObject
 
+#pragma mark - from web
+
 @property (nonatomic, strong) NSString *website;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *authors;
 @property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) NSString *imageURL;
 @property (nonatomic, strong) NSString *content;
+
+#pragma mark - user action
+
+@property (nonatomic) BOOL read;
+
+#pragma mark - Init
+
+- (instancetype)initWithDic:(NSDictionary *)dict;
 
 @end

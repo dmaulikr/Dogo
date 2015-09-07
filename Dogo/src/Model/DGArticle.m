@@ -10,4 +10,23 @@
 
 @implementation DGArticle
 
+#pragma mark - Init
+
+- (instancetype)initWithDic:(NSDictionary *)dict
+{
+    self = [super init];
+
+    _website = [dict valueForKey:@"website"];
+    _title = [dict valueForKey:@"title"];
+    _authors = [dict valueForKey:@"authors"];
+    _date = [dict valueForKey:@"date"];
+    _content = [dict valueForKey:@"content"];
+
+    // TODO: check this...
+    NSString *imageURL = [dict valueForKey:@"image"];
+    _imageURL = imageURL == (id)[NSNull null] ? nil : imageURL;
+    
+    return self;
+}
+
 @end

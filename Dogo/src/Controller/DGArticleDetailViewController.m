@@ -12,16 +12,29 @@
 
 @implementation DGArticleDetailViewController
 
-#pragma mark - View Lifecycle
+#pragma mark - <UIViewController> Lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configure];
+    [self loadArticle];
 }
 
-- (void)configure
+- (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
+    
+    // set article as read
+    _article.read = true;
+}
+
+#pragma mark - Load Article
+
+- (void)loadArticle
+{
+    // view title
+    self.navigationItem.title = _article.title;
+    
     // website
     _lblWebsite.text = _article.website;
     // authors + date

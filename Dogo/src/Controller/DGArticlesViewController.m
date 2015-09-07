@@ -16,6 +16,8 @@
 
 #import <AFNetworking/AFNetworking.h>
 
+@import EventKit;
+
 @interface DGArticlesViewController()
 
 @property (strong) NSMutableArray *articles;
@@ -40,18 +42,9 @@ static NSString *const DogoBaseURLString = @"http://www.ckl.io/challenge";
         
         // if operation is completed with success populate articles array and reload table view data
         _articles = [[NSMutableArray alloc] init];
-        DGArticle *article;
         NSArray *result = (NSArray *) responseObject;
         for (NSDictionary *dict in result) {
-            article = [[DGArticle alloc] init];
-            article.website = [dict valueForKey:@"website"];
-            article.title = [dict valueForKey:@"title"];
-            article.authors = [dict valueForKey:@"authors"];
-            article.date = [dict valueForKey:@"date"];
-            article.imageURL = [dict valueForKey:@"image"];
-            article.imageURL = article.imageURL == (id)[NSNull null] ? nil : article.imageURL;
-            article.content = [dict valueForKey:@"content"];
-            [_articles addObject:article];
+            [_articles addObject:[[DGArticle alloc] initWithDic:dict]];
         }
         [self reloadTableView];
         [self hideProgressHUD];
@@ -89,7 +82,71 @@ static NSString *const ArticleCellWithImageIdentifier = @"ArticleCellWithImage";
 {
     [super viewDidLoad];
     
+    [self setup];
     [self refreshArticles];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self reloadTableView];
+}
+
+- (void)setup
+{
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(organize:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"[Sort by]", nil) style:UIBarButtonItemStylePlain target:self action:@selector(organize:)];
+}
+
+- (void)organize:(id)organize
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"[Sort by]", nil)
+                                                             delegate:self
+                                                    cancelButtonTitle:NSLocalizedString(@"[Cancel]", nil)
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:NSLocalizedString(@"[Website]", nil), NSLocalizedString(@"[Authors]", nil), NSLocalizedString(@"[Date]", nil), NSLocalizedString(@"[Title]", nil), nil];
+    actionSheet.tag = 100;
+    [actionSheet showInView:self.view];
+}
+
+#pragma mark - <UIActionSheetDelegate>
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSSortDescriptor *sortDescriptor;
+    NSArray *customSortDescription;
+    
+    switch (buttonIndex) {
+        case 0:
+            //Authors
+            sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"authors" ascending:YES];
+            customSortDescription = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+            break;
+        case 1:
+            //Date
+            sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
+            customSortDescription = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+            break;
+        case 2:
+            //Title
+            sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+            customSortDescription = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+            break;
+        case 3:
+            //Website
+            sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"website" ascending:YES];
+            customSortDescription = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+            break;
+        default:
+            break;
+    }
+
+    // if not canceled sort the article list
+    if (customSortDescription) {
+        [_articles sortUsingDescriptors:customSortDescription];
+        [self reloadTableView];
+    }
 }
 
 #pragma mark - <Navigation>

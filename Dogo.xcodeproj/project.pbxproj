@@ -15,6 +15,7 @@
 		5EADB2C71B9CABDA0088D43A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EADB2C41B9CABDA0088D43A /* main.m */; };
 		5EB789E31B9CBC1E0007270F /* DGArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB789E21B9CBC1E0007270F /* DGArticleDetailViewController.m */; };
 		5EB789E61B9CBD5D0007270F /* DGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB789E51B9CBD5D0007270F /* DGLabel.m */; };
+		5EB789E91B9CC7240007270F /* UIColor+Dogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB789E81B9CC7240007270F /* UIColor+Dogo.m */; };
 		5EEEBA941B99E36600D0AB9A /* DogoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEEBA931B99E36600D0AB9A /* DogoTests.m */; };
 		5EF057E31B9A08E200A1F632 /* Challenge Specs in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D41B9A08E200A1F632 /* Challenge Specs */; };
 		5EF057E51B9A08E200A1F632 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D91B9A08E200A1F632 /* LaunchScreen.xib */; };
@@ -53,6 +54,8 @@
 		5EB789E21B9CBC1E0007270F /* DGArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleDetailViewController.m; sourceTree = "<group>"; };
 		5EB789E41B9CBD5D0007270F /* DGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGLabel.h; sourceTree = "<group>"; };
 		5EB789E51B9CBD5D0007270F /* DGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLabel.m; sourceTree = "<group>"; };
+		5EB789E71B9CC7240007270F /* UIColor+Dogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Dogo.h"; path = "Category/UIColor+Dogo.h"; sourceTree = "<group>"; };
+		5EB789E81B9CC7240007270F /* UIColor+Dogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Dogo.m"; path = "Category/UIColor+Dogo.m"; sourceTree = "<group>"; };
 		5EEEBA711B99E36500D0AB9A /* Dogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EEEBA8D1B99E36600D0AB9A /* DogoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EEEBA921B99E36600D0AB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -127,6 +130,15 @@
 				5EB789E51B9CBD5D0007270F /* DGLabel.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5EB789EA1B9CC73C0007270F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5EB789E71B9CC7240007270F /* UIColor+Dogo.h */,
+				5EB789E81B9CC7240007270F /* UIColor+Dogo.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 		5EEEBA681B99E36500D0AB9A = {
@@ -208,6 +220,7 @@
 				5E5141101B9BA09300E2726C /* Model */,
 				5E5141231B9BAC7600E2726C /* Controller */,
 				5E5141281B9BAC7600E2726C /* View */,
+				5EB789EA1B9CC73C0007270F /* Category */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -361,6 +374,7 @@
 			files = (
 				5E51411C1B9BA09300E2726C /* DGArticle.m in Sources */,
 				5E5141301B9BAC7600E2726C /* DGArticlesViewController.m in Sources */,
+				5EB789E91B9CC7240007270F /* UIColor+Dogo.m in Sources */,
 				5EB789E31B9CBC1E0007270F /* DGArticleDetailViewController.m in Sources */,
 				5E5141311B9BAC7600E2726C /* DGArticleCell.m in Sources */,
 				5EF057EC1B9A0A6500A1F632 /* Dogo.xcdatamodeld in Sources */,

@@ -9,6 +9,6 @@
 /**
  * Main View Controller responsible to show all Articles in a TableView
  */
-@interface DGArticlesViewController : UITableViewController
+@interface DGArticlesViewController : UITableViewController <UIActionSheetDelegate>
 
 @end

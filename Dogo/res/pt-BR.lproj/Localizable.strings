@@ -7,9 +7,18 @@
 */
 
 "[OK]" = "Fechar";
+"[Cancel]" = "Cancelar";
+
 "[Error Retrieving Articles]" = "Erro Recuperando Artigos";
 
 "[by]" = "por";
 "[on]" = "em";
 
 "[Loading]" = "Carregando...";
+
+"[Sort by]" = "Ordernar por";
+
+"[Website]" = "Site";
+"[Authors]" = "Autores";
+"[Date]" = "Data";
+"[Title]" = "Titulo";

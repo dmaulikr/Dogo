@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-1498" y="-168"/>
         </scene>
-        <!--Articles View Controller-->
+        <!--Dogo-->
         <scene sceneID="mfL-y9-FNS">
             <objects>
                 <tableViewController storyboardIdentifier="Articles" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Ih-ck-64U" customClass="DGArticlesViewController" sceneMemberID="viewController">
@@ -155,7 +155,7 @@
                             <outlet property="delegate" destination="0Ih-ck-64U" id="heQ-dn-U8w"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="eU4-wH-TzX"/>
+                    <navigationItem key="navigationItem" title="Dogo" id="eU4-wH-TzX"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="rGf-YC-JEt" id="MuC-sT-IB8"/>

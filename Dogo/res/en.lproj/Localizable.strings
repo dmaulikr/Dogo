@@ -7,9 +7,18 @@
 */
 
 "[OK]" = "OK";
+"[Cancel]" = "Cancel";
+
 "[Error Retrieving Articles]" = "Error Retrieving Articles";
 
 "[by]" = "by";
 "[on]" = "on";
 
 "[Loading]" = "Loading...";
+
+"[Sort by]" = "Sort by";
+
+"[Website]" = "Website";
+"[Authors]" = "Authors";
+"[Date]" = "Date";
+"[Title]" = "Title";
