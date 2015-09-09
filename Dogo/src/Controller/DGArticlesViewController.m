@@ -89,11 +89,11 @@ static NSInteger const SortByTitleIndex = 3;
 - (void)setupDefaultMessage
 {
     // now configure no article label and show it
-    CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height+[[DGAppDelegate sharedInstance] statusBarHeight];
-    _lblDefaultMessage = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectMake(15, (self.tableView.frame.size.height-navBarHeight)/2, self.tableView.frame.size.width-30, 20))];
+    CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height;
+    _lblDefaultMessage = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectMake(15, (self.view.frame.size.height-navBarHeight)/2, self.view.frame.size.width-30, 20))];
     _lblDefaultMessage.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin; // auto resize width / center
     _lblDefaultMessage.textAlignment = NSTextAlignmentCenter;
-    _lblDefaultMessage.numberOfLines = 1;
+    _lblDefaultMessage.numberOfLines = 0;
     _lblDefaultMessage.textColor = [UIColor defaultFontColor];
     _lblDefaultMessage.font = [UIFont systemFontOfSize:16];
     _lblDefaultMessage.text = NSLocalizedString(@"[Loading Articles]", nil);
@@ -212,7 +212,7 @@ static NSInteger const SortByTitleIndex = 3;
     // clear table view and show default message with error text...
     _articles = [[NSMutableArray alloc] init];
     [self reloadTableView];
-    [self showDefaultMessageWithText:NSLocalizedString(@"[Error Retrieving Articles]", nil)];
+    [self showDefaultMessageWithText:[NSString stringWithFormat:@"%@. %@", NSLocalizedString(@"[Error Retrieving Articles]", nil), [error localizedDescription]]];
 
     // ... and show alert with error message
     UIAlertController *alertController = [UIAlertController

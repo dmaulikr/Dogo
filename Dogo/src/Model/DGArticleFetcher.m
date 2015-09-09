@@ -50,8 +50,7 @@ static NSString *const FetchArticlesFromURL = @"http://www.ckl.io/challenge";
     [self showProgressHUD];
     
     // first check 'reset' param... if 'true' delete all app articles and refetch them from web... otherwise continue normally
-//    if (reset) {
-    if (true) {
+    if (reset) {
     
         [_articleDAO deleteAllArticles];
         [self fetchDataFromWeb];
@@ -81,7 +80,7 @@ static NSString *const FetchArticlesFromURL = @"http://www.ckl.io/challenge";
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest: [NSURLRequest requestWithURL: [NSURL URLWithString: FetchArticlesFromURL]]];
     requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
     [requestOperation setCompletionBlockWithSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
-        DGLog(@"HTTP Request Sucess. Response status code: %d", operation.response.statusCode);
+        DGLog(@"HTTP Request Sucess. Response status code: %ld", (long)operation.response.statusCode);
         
         // get articles from web and extract its into a new array to persist its into disk.
         NSMutableArray *articlesFromWeb = [[NSMutableArray alloc] init];

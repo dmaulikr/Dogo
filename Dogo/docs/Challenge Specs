@@ -5,21 +5,21 @@ The main goal of this challenge is to analyze the skills and knowledge the appli
 The applicant must develop an iOS app written in Objetive-C that fetches the JSON list of articles available through the endpoint http://www.ckl.io/challenge/ and present them in a list. Here are the MVP and extra tasks that will be evaluated.
 
 MVP
-[OK] - Create a public repository on GitHub and add @vitchor;
-[OK] - Create a UITableView with the articles (title, date, author and image);
-[OK] - Ability to visualize content (all provided info);
-[OK] - Ability to sort articles by any field (date, title, website, etc);
-[OK] - Ability to mark articles as read;
-[] - Create a pull-request and assign it to @vitchor.
+- Create a public repository on GitHub and add @vitchor;
+- Create a UITableView with the articles (title, date, author and image);
+- Ability to visualize content (all provided info);
+- Ability to sort articles by any field (date, title, website, etc);
+- Ability to mark articles as read;
+- Create a pull-request and assign it to @vitchor.
 
 Extras
-[OK] - Use cool GitHub libraries to aid the development;
-[OK] - Tablet-adaptive layout;
-[OK] - Persistent info;
-[OK] - Images showing up both in the list and in the content viewer;
-[OK] - Design tweaks: animation, icons, etc;
-[OK] - Use a dependency manager;
-[] - Network error handling.
+- Use cool GitHub libraries to aid the development;
+- Tablet-adaptive layout;
+- Persistent info;
+- Images showing up both in the list and in the content viewer;
+- Design tweaks: animation, icons, etc;
+- Use a dependency manager;
+- Network error handling.
 
 Evaluation criteria
 - Technical capacity;
