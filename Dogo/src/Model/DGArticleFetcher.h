@@ -47,9 +47,4 @@
  */
 - (void)fetchData:(BOOL)reset;
 
-#pragma mark - Utils
-
-//! Return if device has or doesn't have internet/network connection
-- (BOOL)hasNetworkConnection;
-
 @end

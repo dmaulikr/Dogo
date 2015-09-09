@@ -136,10 +136,4 @@ static NSString *const FetchArticlesFromURL = @"http://www.ckl.io/challenge";
     }
 }
 
-//! Return if device has or doesn't have internet/network connection
-- (BOOL)hasNetworkConnection
-{
-    return [AFNetworkReachabilityManager sharedManager].reachable;
-}
-
 @end

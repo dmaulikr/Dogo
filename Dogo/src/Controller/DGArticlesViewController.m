@@ -182,6 +182,7 @@ static NSInteger const SortByTitleIndex = 3;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // TODO: Workaround. This can be improved with autolayout features but I don't know how :(
     if ([self hasImageAtIndexPath:indexPath]) {
         return [[DGAppDelegate sharedInstance] isLandscapeOrientation] ? 275 : 300;
     } else {
