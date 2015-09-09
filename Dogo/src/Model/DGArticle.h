@@ -7,25 +7,30 @@
 //
 
 /**
- * Represents an Article in this app
+ * Represents an Article entity in this app
  */
 @interface DGArticle : NSObject
 
-#pragma mark - from web
+#pragma mark - Properties
 
+//! Identify the place where Article came from
 @property (nonatomic, strong) NSString *website;
+//! Identify the Article title
 @property (nonatomic, strong) NSString *title;
+//! Identify all Article authors
 @property (nonatomic, strong) NSString *authors;
+//! Identify the date when Article was published
 @property (nonatomic, strong) NSDate *date;
-@property (nonatomic, strong) NSString *imageURL;
+//! Image associated to Article (Optional)
+@property (nonatomic, strong) NSString *image;
+//! The Article content itself
 @property (nonatomic, strong) NSString *content;
-
-#pragma mark - user action
-
+//! Informs that Article was read by user
 @property (nonatomic) BOOL read;
 
 #pragma mark - Init
 
-- (instancetype)initWithDic:(NSDictionary *)dict;
+//! Use this to init a DGArticle instance using dictionary
+- (instancetype)initWithDict:(NSDictionary *)dict;
 
 @end

@@ -11,12 +11,14 @@
 
 @interface DGArticleDetailViewController : UIViewController
 
+#pragma mark - Properties
+
+@property (nonatomic, weak) DGArticle *article;
+
 @property (nonatomic, weak) IBOutlet UILabel *lblWebsite;
 @property (nonatomic, weak) IBOutlet UILabel *lblAuthors;
 @property (nonatomic, weak) IBOutlet UILabel *lblTitle;
 @property (nonatomic, weak) IBOutlet UIImageView *imgViewThumb;
 @property (nonatomic, weak) IBOutlet DGLabel *lblContent;
-
-@property (nonatomic, weak) DGArticle *article;
 
 @end

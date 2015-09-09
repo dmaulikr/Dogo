@@ -10,20 +10,32 @@
 
 #import "UIImageView+AFNetworking.h"
 #import "UIColor+Dogo.h"
+#import "NSDate+Dogo.h"
 
 @implementation DGArticleCell
 
-#pragma mark - Methods
+#pragma mark - <UITableViewCell>
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    _lblWebsite.text = nil;
+    _lblAuthors.text = nil;
+    _lblTitle.text = nil;
+    _lblContent.text = nil;
+    _imgViewThumb.image = [UIImage imageNamed:@"placeholder"];
+}
+
+#pragma mark - Load Article
 
 - (void)loadArticle:(DGArticle *)article
 {
     // website
     _lblWebsite.text = article.website;
     // authors + date
-    _lblAuthors.text = [NSString stringWithFormat:@"%@ %@ %@ %@", NSLocalizedString(@"[by]", nil), article.authors, NSLocalizedString(@"[on]", nil), article.date];
+    _lblAuthors.text = [NSString stringWithFormat:@"%@ %@ %@ %@", NSLocalizedString(@"[by]", nil), article.authors, NSLocalizedString(@"[on]", nil), [article.date dateToStringWithDateFormat:NSLocalizedString(@"[Localized Date Format]", nil) ]];
     // image
-    [_imgViewThumb setImage:nil];
-    [_imgViewThumb setImageWithURL:[NSURL URLWithString:article.imageURL]];
+    [_imgViewThumb setImageWithURL:[NSURL URLWithString:article.image] placeholderImage:[UIImage imageNamed:@"placeholder"]];
     // title
     _lblTitle.text = article.title;
     // content (justified)
@@ -34,7 +46,7 @@
     _lblContent.attributedText = [[NSAttributedString alloc] initWithString:content attributes:@{NSParagraphStyleAttributeName: paragraphStyles}];
     
     // if article alredy is read change the background color
-    self.backgroundColor = (article.read) ? [UIColor backgroundColor] : [UIColor whiteColor];
+    self.backgroundColor = (article.read) ? [UIColor backgroundCellReadColor] : [UIColor backgroundCellUnreadColor];
 }
 
 @end

@@ -14,7 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MBProgressHUD.xcscheme</key>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>KVNProgress.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1916AF96A15C0254D7D18AFEC526275C</key>
+		<key>0F01339336D335265250D67C1BA0A782</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>457CC658B40A808A911D369EDE6CA5A6</key>
+		<key>0FB7C3E252B504134095EFBF4776A06C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B5B59662DFAE340A44F04C16F8F080B6</key>
+		<key>68C66E60CA69E03AF8EB7CA523098D3F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD5A50724E3388180CAAC2DB7D8EAF04</key>
+		<key>764381747A6555B6D806F6CD2CF6A464</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C631E76BA51B830AF9F5908504926803</key>
 		<dict>
 			<key>primary</key>
 			<true/>

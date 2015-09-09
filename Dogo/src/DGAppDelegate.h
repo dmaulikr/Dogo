@@ -15,6 +15,24 @@
 
 @interface DGAppDelegate : UIResponder <UIApplicationDelegate>
 
+#pragma mark - Default
+
 @property (strong, nonatomic) UIWindow *window;
+
+#pragma mark - Singleton / Fast Access
+
+//! Return shared app delegate instance (singleton)
++ (instancetype)sharedInstance;
+
+#pragma mark - Utils
+
+//! Return the database full path (directory+databasename)
+- (NSString *)applicationDatabaseDirectory;
+
+//! Return the status bar height if it's visible
+- (CGFloat)statusBarHeight;
+
+//! Check if device is in landscape orientation
+- (BOOL)isLandscapeOrientation;
 
 @end

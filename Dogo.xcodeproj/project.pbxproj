@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		0D153C1E7CB655EDBEE98F51 /* libPods-Dogo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D5BCA0500DF83D419907FC /* libPods-Dogo.a */; };
 		5E2E0CC01B9CADD400860A9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E2E0CBE1B9CADD400860A9D /* Localizable.strings */; };
+		5E35E6A61B9F636100E7F7F7 /* DGDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35E6A51B9F636100E7F7F7 /* DGDatabase.m */; };
+		5E35E6AF1BA0627100E7F7F7 /* DGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35E6AE1BA0627100E7F7F7 /* DGUtils.m */; };
 		5E51411C1B9BA09300E2726C /* DGArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5141121B9BA09300E2726C /* DGArticle.m */; };
 		5E5141301B9BAC7600E2726C /* DGArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5141271B9BAC7600E2726C /* DGArticlesViewController.m */; };
-		5E5141311B9BAC7600E2726C /* DGArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E51412A1B9BAC7600E2726C /* DGArticleCell.m */; };
+		5E8E00101B9F270C00283007 /* DGArticleDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E000F1B9F270C00283007 /* DGArticleDAO.m */; };
+		5E8E001B1B9F4C7F00283007 /* DGArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E00171B9F4C7F00283007 /* DGArticleCell.m */; };
+		5E8E001C1B9F4C7F00283007 /* DGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E00191B9F4C7F00283007 /* DGLabel.m */; };
+		5E8E001F1B9F518100283007 /* NSDate+Dogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E001E1B9F518100283007 /* NSDate+Dogo.m */; };
 		5EADB2C71B9CABDA0088D43A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EADB2C41B9CABDA0088D43A /* main.m */; };
 		5EB789E31B9CBC1E0007270F /* DGArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB789E21B9CBC1E0007270F /* DGArticleDetailViewController.m */; };
-		5EB789E61B9CBD5D0007270F /* DGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB789E51B9CBD5D0007270F /* DGLabel.m */; };
 		5EB789E91B9CC7240007270F /* UIColor+Dogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB789E81B9CC7240007270F /* UIColor+Dogo.m */; };
+		5EE974401B9DF5B200EDBABB /* DGArticleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9743F1B9DF5B200EDBABB /* DGArticleFetcher.m */; };
 		5EEEBA941B99E36600D0AB9A /* DogoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEEBA931B99E36600D0AB9A /* DogoTests.m */; };
 		5EF057E31B9A08E200A1F632 /* Challenge Specs in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D41B9A08E200A1F632 /* Challenge Specs */; };
 		5EF057E51B9A08E200A1F632 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D91B9A08E200A1F632 /* LaunchScreen.xib */; };
 		5EF057E61B9A08E200A1F632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057DB1B9A08E200A1F632 /* Main.storyboard */; };
 		5EF057E71B9A08E200A1F632 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057DD1B9A08E200A1F632 /* Images.xcassets */; };
 		5EF057E81B9A08E200A1F632 /* DGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF057E01B9A08E200A1F632 /* DGAppDelegate.m */; };
-		5EF057EC1B9A0A6500A1F632 /* Dogo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EF057EA1B9A0A6500A1F632 /* Dogo.xcdatamodeld */; };
-		5EF057EF1B9A0CDA00A1F632 /* Challenge JSON in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */; };
+		5EF95F0D1BA07C4F00642F8D /* NSMutalbeArray+DGArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF95F0C1BA07C4F00642F8D /* NSMutalbeArray+DGArticle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,21 +45,31 @@
 		5E2E0CC51B9CB37600860A9D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		5E2E0CC61B9CB37600860A9D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		5E2E0CC71B9CB37600860A9D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5E35E6A41B9F636100E7F7F7 /* DGDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DGDatabase.h; path = Database/DGDatabase.h; sourceTree = "<group>"; };
+		5E35E6A51B9F636100E7F7F7 /* DGDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DGDatabase.m; path = Database/DGDatabase.m; sourceTree = "<group>"; };
+		5E35E6AD1BA0627100E7F7F7 /* DGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DGUtils.h; path = Util/DGUtils.h; sourceTree = "<group>"; };
+		5E35E6AE1BA0627100E7F7F7 /* DGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DGUtils.m; path = Util/DGUtils.m; sourceTree = "<group>"; };
 		5E5141111B9BA09300E2726C /* DGArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticle.h; sourceTree = "<group>"; };
 		5E5141121B9BA09300E2726C /* DGArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticle.m; sourceTree = "<group>"; };
 		5E5141261B9BAC7600E2726C /* DGArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticlesViewController.h; sourceTree = "<group>"; };
 		5E5141271B9BAC7600E2726C /* DGArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticlesViewController.m; sourceTree = "<group>"; };
-		5E5141291B9BAC7600E2726C /* DGArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleCell.h; sourceTree = "<group>"; };
-		5E51412A1B9BAC7600E2726C /* DGArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleCell.m; sourceTree = "<group>"; };
+		5E8E000E1B9F270C00283007 /* DGArticleDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleDAO.h; sourceTree = "<group>"; };
+		5E8E000F1B9F270C00283007 /* DGArticleDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleDAO.m; sourceTree = "<group>"; };
+		5E8E00161B9F4C7F00283007 /* DGArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleCell.h; sourceTree = "<group>"; };
+		5E8E00171B9F4C7F00283007 /* DGArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleCell.m; sourceTree = "<group>"; };
+		5E8E00181B9F4C7F00283007 /* DGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGLabel.h; sourceTree = "<group>"; };
+		5E8E00191B9F4C7F00283007 /* DGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLabel.m; sourceTree = "<group>"; };
+		5E8E001D1B9F518100283007 /* NSDate+Dogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Dogo.h"; path = "Category/NSDate+Dogo.h"; sourceTree = "<group>"; };
+		5E8E001E1B9F518100283007 /* NSDate+Dogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Dogo.m"; path = "Category/NSDate+Dogo.m"; sourceTree = "<group>"; };
 		5EADB2C31B9CABDA0088D43A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EADB2C41B9CABDA0088D43A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5EADB2C51B9CABDA0088D43A /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		5EB789E11B9CBC1E0007270F /* DGArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleDetailViewController.h; sourceTree = "<group>"; };
 		5EB789E21B9CBC1E0007270F /* DGArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleDetailViewController.m; sourceTree = "<group>"; };
-		5EB789E41B9CBD5D0007270F /* DGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGLabel.h; sourceTree = "<group>"; };
-		5EB789E51B9CBD5D0007270F /* DGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLabel.m; sourceTree = "<group>"; };
 		5EB789E71B9CC7240007270F /* UIColor+Dogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Dogo.h"; path = "Category/UIColor+Dogo.h"; sourceTree = "<group>"; };
 		5EB789E81B9CC7240007270F /* UIColor+Dogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Dogo.m"; path = "Category/UIColor+Dogo.m"; sourceTree = "<group>"; };
+		5EE9743E1B9DF5B200EDBABB /* DGArticleFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleFetcher.h; sourceTree = "<group>"; };
+		5EE9743F1B9DF5B200EDBABB /* DGArticleFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleFetcher.m; sourceTree = "<group>"; };
 		5EEEBA711B99E36500D0AB9A /* Dogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EEEBA8D1B99E36600D0AB9A /* DogoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EEEBA921B99E36600D0AB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,8 +80,8 @@
 		5EF057DD1B9A08E200A1F632 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5EF057DF1B9A08E200A1F632 /* DGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGAppDelegate.h; sourceTree = "<group>"; };
 		5EF057E01B9A08E200A1F632 /* DGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGAppDelegate.m; sourceTree = "<group>"; };
-		5EF057EB1B9A0A6500A1F632 /* Dogo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dogo.xcdatamodel; sourceTree = "<group>"; };
-		5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Challenge JSON"; sourceTree = "<group>"; };
+		5EF95F0B1BA07C4F00642F8D /* NSMutableArray+DGArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+DGArticle.h"; path = "Category/NSMutableArray+DGArticle.h"; sourceTree = "<group>"; };
+		5EF95F0C1BA07C4F00642F8D /* NSMutalbeArray+DGArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutalbeArray+DGArticle.m"; path = "Category/NSMutalbeArray+DGArticle.m"; sourceTree = "<group>"; };
 		75D5BCA0500DF83D419907FC /* libPods-Dogo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dogo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBDC106F539E8A88FE34543 /* Pods-Dogo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dogo/Pods-Dogo.debug.xcconfig"; sourceTree = "<group>"; };
 		ED697685EE6E59952D79EC9D /* Pods-Dogo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dogo/Pods-Dogo.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,11 +115,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5E35E6A31B9F632500E7F7F7 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				5E35E6A41B9F636100E7F7F7 /* DGDatabase.h */,
+				5E35E6A51B9F636100E7F7F7 /* DGDatabase.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		5E35E6B01BA0627600E7F7F7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5E35E6AD1BA0627100E7F7F7 /* DGUtils.h */,
+				5E35E6AE1BA0627100E7F7F7 /* DGUtils.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		5E5141101B9BA09300E2726C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5E5141111B9BA09300E2726C /* DGArticle.h */,
 				5E5141121B9BA09300E2726C /* DGArticle.m */,
+				5E8E000E1B9F270C00283007 /* DGArticleDAO.h */,
+				5E8E000F1B9F270C00283007 /* DGArticleDAO.m */,
+				5EE9743E1B9DF5B200EDBABB /* DGArticleFetcher.h */,
+				5EE9743F1B9DF5B200EDBABB /* DGArticleFetcher.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,13 +157,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5E5141281B9BAC7600E2726C /* View */ = {
+		5E8E00141B9F4C7F00283007 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5E5141291B9BAC7600E2726C /* DGArticleCell.h */,
-				5E51412A1B9BAC7600E2726C /* DGArticleCell.m */,
-				5EB789E41B9CBD5D0007270F /* DGLabel.h */,
-				5EB789E51B9CBD5D0007270F /* DGLabel.m */,
+				5E8E00161B9F4C7F00283007 /* DGArticleCell.h */,
+				5E8E00171B9F4C7F00283007 /* DGArticleCell.m */,
+				5E8E00181B9F4C7F00283007 /* DGLabel.h */,
+				5E8E00191B9F4C7F00283007 /* DGLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -137,6 +173,10 @@
 			children = (
 				5EB789E71B9CC7240007270F /* UIColor+Dogo.h */,
 				5EB789E81B9CC7240007270F /* UIColor+Dogo.m */,
+				5E8E001D1B9F518100283007 /* NSDate+Dogo.h */,
+				5E8E001E1B9F518100283007 /* NSDate+Dogo.m */,
+				5EF95F0B1BA07C4F00642F8D /* NSMutableArray+DGArticle.h */,
+				5EF95F0C1BA07C4F00642F8D /* NSMutalbeArray+DGArticle.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -192,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				5EF057D41B9A08E200A1F632 /* Challenge Specs */,
-				5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */,
 			);
 			path = docs;
 			sourceTree = "<group>";
@@ -206,7 +245,6 @@
 				5EF057D91B9A08E200A1F632 /* LaunchScreen.xib */,
 				5EF057DB1B9A08E200A1F632 /* Main.storyboard */,
 				5EF057DD1B9A08E200A1F632 /* Images.xcassets */,
-				5EF057EA1B9A0A6500A1F632 /* Dogo.xcdatamodeld */,
 				5E2E0CBE1B9CADD400860A9D /* Localizable.strings */,
 			);
 			path = res;
@@ -219,8 +257,10 @@
 				5EF057E01B9A08E200A1F632 /* DGAppDelegate.m */,
 				5E5141101B9BA09300E2726C /* Model */,
 				5E5141231B9BAC7600E2726C /* Controller */,
-				5E5141281B9BAC7600E2726C /* View */,
+				5E8E00141B9F4C7F00283007 /* View */,
 				5EB789EA1B9CC73C0007270F /* Category */,
+				5E35E6A31B9F632500E7F7F7 /* Database */,
+				5E35E6B01BA0627600E7F7F7 /* Util */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -320,7 +360,6 @@
 				5E2E0CC01B9CADD400860A9D /* Localizable.strings in Resources */,
 				5EF057E71B9A08E200A1F632 /* Images.xcassets in Resources */,
 				5EF057E51B9A08E200A1F632 /* LaunchScreen.xib in Resources */,
-				5EF057EF1B9A0CDA00A1F632 /* Challenge JSON in Resources */,
 				5EF057E31B9A08E200A1F632 /* Challenge Specs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,12 +414,17 @@
 				5E51411C1B9BA09300E2726C /* DGArticle.m in Sources */,
 				5E5141301B9BAC7600E2726C /* DGArticlesViewController.m in Sources */,
 				5EB789E91B9CC7240007270F /* UIColor+Dogo.m in Sources */,
+				5E35E6AF1BA0627100E7F7F7 /* DGUtils.m in Sources */,
+				5E8E001C1B9F4C7F00283007 /* DGLabel.m in Sources */,
 				5EB789E31B9CBC1E0007270F /* DGArticleDetailViewController.m in Sources */,
-				5E5141311B9BAC7600E2726C /* DGArticleCell.m in Sources */,
-				5EF057EC1B9A0A6500A1F632 /* Dogo.xcdatamodeld in Sources */,
+				5E8E001B1B9F4C7F00283007 /* DGArticleCell.m in Sources */,
+				5EF95F0D1BA07C4F00642F8D /* NSMutalbeArray+DGArticle.m in Sources */,
+				5EE974401B9DF5B200EDBABB /* DGArticleFetcher.m in Sources */,
+				5E8E001F1B9F518100283007 /* NSDate+Dogo.m in Sources */,
 				5EADB2C71B9CABDA0088D43A /* main.m in Sources */,
+				5E8E00101B9F270C00283007 /* DGArticleDAO.m in Sources */,
+				5E35E6A61B9F636100E7F7F7 /* DGDatabase.m in Sources */,
 				5EF057E81B9A08E200A1F632 /* DGAppDelegate.m in Sources */,
-				5EB789E61B9CBD5D0007270F /* DGLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,19 +650,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		5EF057EA1B9A0A6500A1F632 /* Dogo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				5EF057EB1B9A0A6500A1F632 /* Dogo.xcdatamodel */,
-			);
-			currentVersion = 5EF057EB1B9A0A6500A1F632 /* Dogo.xcdatamodel */;
-			path = Dogo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 5EEEBA691B99E36500D0AB9A /* Project object */;
 }

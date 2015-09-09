@@ -8,73 +8,34 @@
 
 #import "DGArticlesViewController.h"
 
+#import "UIColor+Dogo.h"
+#import "NSMutableArray+DGArticle.h"
+
 #import "DGArticle.h"
 #import "DGArticleCell.h"
 #import "DGArticleDetailViewController.h"
-
-#import <MBProgressHUD/MBProgressHUD.h>
-
-#import <AFNetworking/AFNetworking.h>
 
 @import EventKit;
 
 @interface DGArticlesViewController()
 
-@property (strong) NSMutableArray *articles;
+@property (nonatomic, strong) DGArticleFetcher *fetcher;
+@property (nonatomic, strong) NSMutableArray *articles;
+@property (nonatomic, strong) UILabel *lblDefaultMessage;
 
 @end
 
 @implementation DGArticlesViewController
 
-#pragma mark - Get Articles from web
-//TODO: Workaround... this behavior must be encapsulated in another class/concept
-
-static NSString *const DogoBaseURLString = @"http://www.ckl.io/challenge";
-
-//! Get all Articles from website and reload table view data with these results.
-- (void)refreshArticles
-{
-    // first show progress HUD and create the HTTP request operation
-    [self showProgressHUD];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest: [NSURLRequest requestWithURL: [NSURL URLWithString: DogoBaseURLString]]];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    [operation setCompletionBlockWithSuccess: ^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        // if operation is completed with success populate articles array and reload table view data
-        _articles = [[NSMutableArray alloc] init];
-        NSArray *result = (NSArray *) responseObject;
-        for (NSDictionary *dict in result) {
-            [_articles addObject:[[DGArticle alloc] initWithDic:dict]];
-        }
-        [self reloadTableView];
-        [self hideProgressHUD];
-        
-    } failure: ^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        // if occurs any error show it to user and cancel operation
-        UIAlertController *alertController = [UIAlertController
-                                              alertControllerWithTitle:NSLocalizedString(@"[Error Retrieving Articles]", nil)
-                                              message:[error localizedDescription]
-                                              preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okAction = [UIAlertAction
-                                   actionWithTitle:NSLocalizedString(@"[OK]", nil)
-                                   style:UIAlertActionStyleDefault
-                                   handler:nil];
-        [alertController addAction:okAction];
-        [self presentViewController:alertController animated:YES completion:nil];
-        
-        [self hideProgressHUD];
-        DGLog(@"Error: %@", error);
-    }];
-    
-    // start HTTP request operation
-    [operation start];
-}
-
 #pragma mark - Constants
 
 static NSString *const ArticleCellIdentifier = @"ArticleCell";
 static NSString *const ArticleCellWithImageIdentifier = @"ArticleCellWithImage";
+
+static NSInteger const SortByWebsiteIndex = 0;
+static NSInteger const SortByAuthorsIndex = 1;
+static NSInteger const SortByDateIndex = 2;
+static NSInteger const SortByTitleIndex = 3;
 
 #pragma mark - <UIViewController> Lifecycle
 
@@ -82,69 +43,94 @@ static NSString *const ArticleCellWithImageIdentifier = @"ArticleCellWithImage";
 {
     [super viewDidLoad];
     
-    [self setup];
-    [self refreshArticles];
+    [self setupNavigationBar];
+    [self setupTableView];
+    [self setupDefaultMessage];
+    [self setupFetcherAndGetData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
+    // just reload table view items
     [self reloadTableView];
 }
 
-- (void)setup
+#pragma mark - Setup
+
+- (void)setupNavigationBar
 {
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(organize:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"[Sort by]", nil) style:UIBarButtonItemStylePlain target:self action:@selector(organize:)];
+    // style; solid color
+    UINavigationBar *navigationBar = self.navigationController.navigationBar;
+    navigationBar.translucent = false;
+    navigationBar.barStyle = UIBarStyleBlack;
+    navigationBar.tintColor = [UIColor whiteColor];
+    navigationBar.barTintColor = [UIColor backgroundNavigationColor];
+    
+    // setup title and back button font size
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont systemFontOfSize:18], NSFontAttributeName, nil]];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont  systemFontOfSize:14], NSFontAttributeName, nil] forState:UIControlStateNormal];
+
+    // right buttons. Sort and Refresh buttons
+    UIBarButtonItem *btnSortBy = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navbar-sort-by"] style:UIBarButtonItemStylePlain target:self action:@selector(btnSortByClick)];
+    UIBarButtonItem *btnRefresh = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navbar-refresh"] style:UIBarButtonItemStylePlain target:self action:@selector(btnRefreshClick)];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:btnSortBy, btnRefresh, nil];
 }
 
-- (void)organize:(id)organize
+- (void)setupTableView
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"[Sort by]", nil)
-                                                             delegate:self
-                                                    cancelButtonTitle:NSLocalizedString(@"[Cancel]", nil)
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:NSLocalizedString(@"[Website]", nil), NSLocalizedString(@"[Authors]", nil), NSLocalizedString(@"[Date]", nil), NSLocalizedString(@"[Title]", nil), nil];
-    actionSheet.tag = 100;
-    [actionSheet showInView:self.view];
+    self.tableView.alwaysBounceVertical = false;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;;
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 30, 0, 30);
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero]; // This will remove extra separators from tableview
+}
+
+- (void)setupDefaultMessage
+{
+    // now configure no article label and show it
+    CGFloat navBarHeight = self.navigationController.navigationBar.frame.size.height+[[DGAppDelegate sharedInstance] statusBarHeight];
+    _lblDefaultMessage = [[UILabel alloc] initWithFrame:CGRectIntegral(CGRectMake(15, (self.tableView.frame.size.height-navBarHeight)/2, self.tableView.frame.size.width-30, 20))];
+    _lblDefaultMessage.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin; // auto resize width / center
+    _lblDefaultMessage.textAlignment = NSTextAlignmentCenter;
+    _lblDefaultMessage.numberOfLines = 1;
+    _lblDefaultMessage.textColor = [UIColor defaultFontColor];
+    _lblDefaultMessage.font = [UIFont systemFontOfSize:16];
+    _lblDefaultMessage.text = NSLocalizedString(@"[Loading Articles]", nil);
+    [self.view addSubview:_lblDefaultMessage];
+}
+
+- (void)setupFetcherAndGetData
+{
+    // first create fetcher so start fetch data operation
+    _fetcher = [[DGArticleFetcher alloc] initWithDelegate:self];
+    [_fetcher fetchData:false];
 }
 
 #pragma mark - <UIActionSheetDelegate>
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSSortDescriptor *sortDescriptor;
-    NSArray *customSortDescription;
-    
+    NSString *field = nil;
     switch (buttonIndex) {
-        case 0:
-            //Authors
-            sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"authors" ascending:YES];
-            customSortDescription = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        case SortByWebsiteIndex:
+            field = @"website";
             break;
-        case 1:
-            //Date
-            sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
-            customSortDescription = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        case SortByAuthorsIndex:
+            field = @"authors";
             break;
-        case 2:
-            //Title
-            sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
-            customSortDescription = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        case SortByDateIndex:
+            field = @"date";
             break;
-        case 3:
-            //Website
-            sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"website" ascending:YES];
-            customSortDescription = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+        case SortByTitleIndex:
+            field = @"title";
             break;
         default:
             break;
     }
-
-    // if not canceled sort the article list
-    if (customSortDescription) {
-        [_articles sortUsingDescriptors:customSortDescription];
+    // use selected field to sort articles array (if necessary)
+    if (field != nil) {
+        [_articles sortByField:field];
         [self reloadTableView];
     }
 }
@@ -155,18 +141,15 @@ static NSString *const ArticleCellWithImageIdentifier = @"ArticleCellWithImage";
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     DGArticle *article = _articles[indexPath.row];
-    DGArticleDetailViewController *viewController = [segue destinationViewController];
-    viewController.article = article;
+    DGArticleDetailViewController *detailViewController = [segue destinationViewController];
+    detailViewController.article = article;
 }
 
 #pragma mark - <UITableView>
 
 - (void)reloadTableView
 {
-    // this must be executed in the main thread
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
+    [self.tableView reloadData];
 }
 
 #pragma mark - <UITableViewDataSource>
@@ -192,7 +175,7 @@ static NSString *const ArticleCellWithImageIdentifier = @"ArticleCellWithImage";
 - (BOOL)hasImageAtIndexPath:(NSIndexPath *)indexPath
 {
     DGArticle *article = _articles[indexPath.row];
-    return article.imageURL;
+    return article.image != nil;
 }
 
 #pragma mark - <UITableViewDelegate>
@@ -200,30 +183,97 @@ static NSString *const ArticleCellWithImageIdentifier = @"ArticleCellWithImage";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self hasImageAtIndexPath:indexPath]) {
-        return [self isLandscapeOrientation] ? 275 : 300;
+        return [[DGAppDelegate sharedInstance] isLandscapeOrientation] ? 275 : 300;
     } else {
-        return [self isLandscapeOrientation] ? 125 : 150;
+        return [[DGAppDelegate sharedInstance] isLandscapeOrientation] ? 125 : 150;
     }
 }
 
-#pragma mark - <Progress HUD>
+#pragma mark - <DGArticleFetcherDelegate>
 
-- (void)showProgressHUD
+//! Receive a success message from request
+- (void)fetchDataSuccess:(NSArray *)articles
 {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [[MBProgressHUD HUDForView:self.view] setLabelText:NSLocalizedString(@"[Loading]", nil)];
+    // refresh articles list and reload table view...
+    _articles = [NSMutableArray arrayWithArray:articles];
+    [self reloadTableView];
+    
+    // now check if has articles to show... if has hide default message, otherwise show a label with custom message
+    if (_articles.count > 0) {
+        [self hideDefaultMessage];
+    } else {
+        [self showDefaultMessageWithText:NSLocalizedString(@"[No Articles]", nil)];
+    }
 }
 
-- (void)hideProgressHUD
+//! Receive an error from request
+- (void)fetchDataError:(NSError *)error
 {
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    // clear table view and show default message with error text...
+    _articles = [[NSMutableArray alloc] init];
+    [self reloadTableView];
+    [self showDefaultMessageWithText:NSLocalizedString(@"[Error Retrieving Articles]", nil)];
+
+    // ... and show alert with error message
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:NSLocalizedString(@"[Error Retrieving Articles]", nil)
+                                          message:[error localizedDescription]
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"[OK]", nil)
+                               style:UIAlertActionStyleDefault
+                               handler:nil];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
-#pragma mark - Utils
+#pragma mark - Default Message Control
 
-- (BOOL)isLandscapeOrientation
+//! Show lblDefaultMessage with custom text passed by param
+- (void)showDefaultMessageWithText:(NSString *)text
 {
-    return UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation);
+    _lblDefaultMessage.text = text;
+    [self.view addSubview:_lblDefaultMessage];
+}
+
+//! Just remove lblDefaultMessage from view
+- (void)hideDefaultMessage
+{
+    [_lblDefaultMessage removeFromSuperview];
+}
+
+#pragma mark - Navigation Bar Buttons Handle
+
+//! Ask to user wich field he wants sort the articles list and apply to articles list
+- (void)btnSortByClick
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"[Sort by]", nil)
+                                                             delegate:self
+                                                    cancelButtonTitle:NSLocalizedString(@"[Cancel]", nil)
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:NSLocalizedString(@"[Website]", nil), NSLocalizedString(@"[Authors]", nil), NSLocalizedString(@"[Date]", nil), NSLocalizedString(@"[Title]", nil), nil];
+    actionSheet.tag = 100;
+    [actionSheet showInView:self.view];
+}
+
+//! Ask to user if refresh operation can be executed
+- (void)btnRefreshClick
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"[Reset Articles Title]", nil)
+                                                                             message:NSLocalizedString(@"[Reset Articles Message]", nil)
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[Yes]", nil)
+                                                        style:UIAlertActionStyleDestructive
+                                                      handler:^(UIAlertAction *action)
+                                                        {
+                                                            [_fetcher fetchData:true];
+                                                        }];
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[No]", nil)
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alertController addAction:yesAction];
+    [alertController addAction:noAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 @end

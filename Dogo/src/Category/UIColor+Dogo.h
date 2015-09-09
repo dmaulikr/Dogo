@@ -8,6 +8,11 @@
 
 @interface UIColor (Dogo)
 
-+ (UIColor *)backgroundColor;
++ (UIColor *) backgroundNavigationColor;
+
++ (UIColor *) backgroundCellUnreadColor;
++ (UIColor *) backgroundCellReadColor;
+
++ (UIColor *)defaultFontColor;
 
 @end

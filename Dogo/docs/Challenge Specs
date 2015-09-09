@@ -14,8 +14,8 @@ MVP
 
 Extras
 [OK] - Use cool GitHub libraries to aid the development;
-[] - Tablet-adaptive layout;
-[] - Persistent info;
+[OK] - Tablet-adaptive layout;
+[OK] - Persistent info;
 [OK] - Images showing up both in the list and in the content viewer;
 [OK] - Design tweaks: animation, icons, etc;
 [OK] - Use a dependency manager;

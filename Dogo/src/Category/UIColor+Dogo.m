@@ -34,16 +34,32 @@
     float blue = ((baseValue >> 8) & 0xFF)/255.0f;
     float alpha = ((baseValue >> 0) & 0xFF)/255.0f;
     
-    //    NSLog(@"[%@][%@] red:%f, green:%f, blue: %f, alpha: %f", [self class], NSStringFromSelector(_cmd), red, green, blue, alpha);
+//    NSLog(@"[%@][%@] red:%f, green:%f, blue: %f, alpha: %f", [self class], NSStringFromSelector(_cmd), red, green, blue, alpha);
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 #pragma mark - Custom Colors
 
-+ (UIColor *)backgroundColor
++ (UIColor *) backgroundNavigationColor
 {
-    return [self colorFromHexString:@"#EFEFEF"];
-//    return [UIColor grayColor];
+    // Deep Orange 400 from Google Color Palette
+    return [UIColor colorFromHexString:@"#FF7043"];
+}
+
++ (UIColor *) backgroundCellUnreadColor
+{
+    return [UIColor whiteColor];
+}
+
++ (UIColor *) backgroundCellReadColor
+{
+    // Orange 50 from Google Color Palette
+    return [self colorFromHexString:@"#FFF3E0"];
+}
+
++ (UIColor *)defaultFontColor
+{
+    return [self colorFromHexString:@"#222222"];
 }
 
 @end

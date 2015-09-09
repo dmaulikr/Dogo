@@ -14,12 +14,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="0Ih-ck-64U" kind="relationship" relationship="rootViewController" id="ocr-4d-8ee"/>
+                        <segue destination="0Ih-ck-64U" kind="relationship" relationship="rootViewController" id="JYn-7h-0eV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1498" y="-168"/>
+            <point key="canvasLocation" x="-1530" y="-168"/>
         </scene>
         <!--Dogo-->
         <scene sceneID="mfL-y9-FNS">
@@ -30,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ArticleCell" rowHeight="100" id="mjv-nd-W88" customClass="DGArticleCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleCell" rowHeight="100" id="mjv-nd-W88" customClass="DGArticleCell">
                                 <rect key="frame" x="0.0" y="130" width="320" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mjv-nd-W88" id="BCX-A2-wxY">
@@ -76,6 +76,7 @@
                                         <constraint firstItem="g8W-Rw-HnJ" firstAttribute="leading" secondItem="BCX-A2-wxY" secondAttribute="leadingMargin" id="yBN-41-Kcr"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="lblAuthors" destination="3HA-YX-zr2" id="eQF-fb-1fh"/>
                                     <outlet property="lblContent" destination="yGV-j2-GCE" id="y7f-AQ-TVh"/>
@@ -84,7 +85,7 @@
                                     <segue destination="mIp-uC-8pL" kind="show" id="gJ1-aS-T9o"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="ArticleCellWithImage" rowHeight="250" id="w4E-ST-dqU" customClass="DGArticleCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArticleCellWithImage" rowHeight="250" id="w4E-ST-dqU" customClass="DGArticleCell">
                                 <rect key="frame" x="0.0" y="130" width="320" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w4E-ST-dqU" id="n7h-tI-V8v">
@@ -140,6 +141,7 @@
                                         <constraint firstItem="NU6-Pe-5XR" firstAttribute="top" secondItem="n7h-tI-V8v" secondAttribute="topMargin" id="uhZ-j4-N3p"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="imgViewThumb" destination="Nht-7K-NwC" id="qsM-h5-xdG"/>
                                     <outlet property="lblAuthors" destination="sMz-3n-znN" id="120-S5-mBv"/>
@@ -155,21 +157,12 @@
                             <outlet property="delegate" destination="0Ih-ck-64U" id="heQ-dn-U8w"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Dogo" id="eU4-wH-TzX"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="rGf-YC-JEt" id="MuC-sT-IB8"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pb-cA-Gdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="rGf-YC-JEt">
-                    <connections>
-                        <outlet property="delegate" destination="0Ih-ck-64U" id="qWD-2V-keN"/>
-                        <outlet property="searchContentsController" destination="0Ih-ck-64U" id="rZW-Cv-16W"/>
-                        <outlet property="searchResultsDataSource" destination="0Ih-ck-64U" id="nu8-hZ-GD2"/>
-                        <outlet property="searchResultsDelegate" destination="0Ih-ck-64U" id="1lA-Hs-rdK"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-1001" y="-168"/>
         </scene>
@@ -182,11 +175,11 @@
                         <viewControllerLayoutGuide type="bottom" id="UNN-xj-Sg7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wbu-ar-LJM">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3F8-GO-5QH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblWebsite" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Bi-PY-aaK">
                                         <rect key="frame" x="10" y="10" width="300" height="12"/>
@@ -213,7 +206,7 @@
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="276" text="lblContent" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Inm-20-h7J" customClass="DGLabel">
                                         <rect key="frame" x="10" y="257" width="300" height="276"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -279,11 +272,11 @@
                         <viewControllerLayoutGuide type="bottom" id="niC-XB-CyR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0S2-Kj-fMp">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="54x-d9-BJ9">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblWebsite" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pns-xt-F6p">
                                         <rect key="frame" x="10" y="10" width="300" height="12"/>
@@ -304,7 +297,7 @@
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="276" text="lblContent" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7Yh-6a-6bm" customClass="DGLabel">
                                         <rect key="frame" x="10" y="67" width="300" height="276"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -347,6 +340,27 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2a-78-uNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="kSg-Db-YUi">
+                    <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <barButtonItem title="Item" id="giG-MM-6Jb"/>
+                    </items>
+                </toolbar>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BCA-9q-Qij">
+                    <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <barButtonItem title="Item" id="e3F-Yg-C6x"/>
+                    </items>
+                </toolbar>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="BY5-Wb-I4E">
+                    <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <barButtonItem title="Item" id="ccv-h7-v4G"/>
+                    </items>
+                </toolbar>
             </objects>
             <point key="canvasLocation" x="-418" y="-523"/>
         </scene>
