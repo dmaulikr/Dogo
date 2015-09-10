@@ -32,11 +32,6 @@
 static NSString *const ArticleCellIdentifier = @"ArticleCell";
 static NSString *const ArticleCellWithImageIdentifier = @"ArticleCellWithImage";
 
-static NSInteger const SortByWebsiteIndex = 0;
-static NSInteger const SortByAuthorsIndex = 1;
-static NSInteger const SortByDateIndex = 2;
-static NSInteger const SortByTitleIndex = 3;
-
 #pragma mark - <UIViewController> Lifecycle
 
 - (void)viewDidLoad
@@ -73,7 +68,7 @@ static NSInteger const SortByTitleIndex = 3;
     [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys: [UIFont  systemFontOfSize:14], NSFontAttributeName, nil] forState:UIControlStateNormal];
 
     // right buttons. Sort and Refresh buttons
-    UIBarButtonItem *btnSortBy = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navbar-sort-by"] style:UIBarButtonItemStylePlain target:self action:@selector(btnSortByClick)];
+    UIBarButtonItem *btnSortBy = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navbar-sort-by"] style:UIBarButtonItemStylePlain target:self action:@selector(btnSortByClick:)];
     UIBarButtonItem *btnRefresh = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navbar-refresh"] style:UIBarButtonItemStylePlain target:self action:@selector(btnRefreshClick)];
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:btnSortBy, btnRefresh, nil];
 }
@@ -105,34 +100,6 @@ static NSInteger const SortByTitleIndex = 3;
     // first create fetcher so start fetch data operation
     _fetcher = [[DGArticleFetcher alloc] initWithDelegate:self];
     [_fetcher fetchData:false];
-}
-
-#pragma mark - <UIActionSheetDelegate>
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *field = nil;
-    switch (buttonIndex) {
-        case SortByWebsiteIndex:
-            field = @"website";
-            break;
-        case SortByAuthorsIndex:
-            field = @"authors";
-            break;
-        case SortByDateIndex:
-            field = @"date";
-            break;
-        case SortByTitleIndex:
-            field = @"title";
-            break;
-        default:
-            break;
-    }
-    // use selected field to sort articles array (if necessary)
-    if (field != nil) {
-        [_articles sortByField:field];
-        [self reloadTableView];
-    }
 }
 
 #pragma mark - <Navigation>
@@ -246,32 +213,50 @@ static NSInteger const SortByTitleIndex = 3;
 #pragma mark - Navigation Bar Buttons Handle
 
 //! Ask to user wich field he wants sort the articles list and apply to articles list
-- (void)btnSortByClick
+- (void)btnSortByClick:(id)sender
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"[Sort by]", nil)
-                                                             delegate:self
-                                                    cancelButtonTitle:NSLocalizedString(@"[Cancel]", nil)
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:NSLocalizedString(@"[Website]", nil), NSLocalizedString(@"[Authors]", nil), NSLocalizedString(@"[Date]", nil), NSLocalizedString(@"[Title]", nil), nil];
-    actionSheet.tag = 100;
-    [actionSheet showInView:self.view];
+    // create and configure
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"[Sort by]", nil) message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    alertController.view.tintColor = [UIColor defaultFontColor];
+    
+    // fields list
+    UIAlertAction *websiteAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[Website]", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) { [self sortByField:@"website"]; }];
+    UIAlertAction *authorsAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[Authors]", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) { [self sortByField:@"authors"]; }];
+    UIAlertAction *dateAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[Date]", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) { [self sortByField:@"date"]; }];
+    UIAlertAction *titleAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[Title]", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) { [self sortByField:@"title"]; }];
+    // cancel
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[Cancel]", nil) style:UIAlertActionStyleCancel handler:nil];
+
+    // add all actions
+    [alertController addAction:websiteAction];
+    [alertController addAction:authorsAction];
+    [alertController addAction:dateAction];
+    [alertController addAction:titleAction];
+    [alertController addAction:cancelAction];
+    
+    // configure popover (for iPad)... put it below navigation bar
+    UIPopoverPresentationController *popover = alertController.popoverPresentationController;
+    if (popover) {
+        popover.sourceView = self.navigationController.navigationBar;
+        popover.sourceRect = self.navigationController.navigationBar.bounds;
+        popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    }
+    // finally show alert as popover action sheet
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)sortByField:(NSString *)field
+{
+    [_articles sortByField:field];
+    [self reloadTableView];
 }
 
 //! Ask to user if refresh operation can be executed
 - (void)btnRefreshClick
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"[Reset Articles Title]", nil)
-                                                                             message:NSLocalizedString(@"[Reset Articles Message]", nil)
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[Yes]", nil)
-                                                        style:UIAlertActionStyleDestructive
-                                                      handler:^(UIAlertAction *action)
-                                                        {
-                                                            [_fetcher fetchData:true];
-                                                        }];
-    UIAlertAction *noAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[No]", nil)
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"[Reset Articles Title]", nil) message:NSLocalizedString(@"[Reset Articles Message]", nil) preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[Yes]", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){ [_fetcher fetchData:true]; }];
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"[No]", nil) style:UIAlertActionStyleDefault handler:nil];
     [alertController addAction:yesAction];
     [alertController addAction:noAction];
     [self presentViewController:alertController animated:YES completion:nil];

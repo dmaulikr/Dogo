@@ -11,6 +11,6 @@
 /**
  * Main View Controller responsible to show all Articles in a TableView
  */
-@interface DGArticlesViewController : UITableViewController <UIActionSheetDelegate, DGArticleFetcherDelegate>
+@interface DGArticlesViewController : UITableViewController <DGArticleFetcherDelegate>
 
 @end
