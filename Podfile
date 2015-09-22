@@ -3,7 +3,10 @@
 
 target 'Dogo' do
 
+pod 'FMDB'
 pod 'AFNetworking'
+pod 'AFNetworkActivityLogger'
+pod 'KVNProgress’
 
 end
 

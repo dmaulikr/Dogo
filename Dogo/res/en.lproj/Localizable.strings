@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  Dogo
+
+  Created by Marsal on 06/09/15.
+  Copyright (c) 2015 Marsal Silveira. All rights reserved.
+*/
+
+/*
+ * Localized strings from English Language
+ */
+
+"[OK]" = "OK";
+"[Cancel]" = "Cancel";
+"[Yes]" = "Yes";
+"[No]" = "No";
+
+"[Error Retrieving Articles]" = "Error Retrieving Articles";
+
+"[by]" = "by";
+"[on]" = "on";
+
+"[Loading]" = "Loading...";
+"[Loading Articles]" = "Loading Articles...";
+
+"[No Articles]" = "There aren't no Articles to show";
+
+"[Sort by]" = "Sort by";
+
+"[Website]" = "Website";
+"[Authors]" = "Authors";
+"[Date]" = "Date";
+"[Title]" = "Title";
+
+"[Localized Date Format]" = "MM/dd/yyyy";
+
+"[Reset Articles Title]" = "Reset Articles";
+"[Reset Articles Message]" = "This will clean all Articles stored in this app and refetch them from web.\nConfirm ?";

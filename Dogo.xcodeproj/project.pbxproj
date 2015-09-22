@@ -8,16 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		0D153C1E7CB655EDBEE98F51 /* libPods-Dogo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D5BCA0500DF83D419907FC /* libPods-Dogo.a */; };
-		5EEEBA771B99E36500D0AB9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEEBA761B99E36500D0AB9A /* main.m */; };
+		5E2E0CC01B9CADD400860A9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E2E0CBE1B9CADD400860A9D /* Localizable.strings */; };
+		5E35E6A61B9F636100E7F7F7 /* DGDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35E6A51B9F636100E7F7F7 /* DGDatabase.m */; };
+		5E35E6AF1BA0627100E7F7F7 /* DGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E35E6AE1BA0627100E7F7F7 /* DGUtils.m */; };
+		5E51411C1B9BA09300E2726C /* DGArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5141121B9BA09300E2726C /* DGArticle.m */; };
+		5E5141301B9BAC7600E2726C /* DGArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5141271B9BAC7600E2726C /* DGArticlesViewController.m */; };
+		5E8E00101B9F270C00283007 /* DGArticleDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E000F1B9F270C00283007 /* DGArticleDAO.m */; };
+		5E8E001B1B9F4C7F00283007 /* DGArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E00171B9F4C7F00283007 /* DGArticleCell.m */; };
+		5E8E001C1B9F4C7F00283007 /* DGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E00191B9F4C7F00283007 /* DGLabel.m */; };
+		5E8E001F1B9F518100283007 /* NSDate+Dogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E001E1B9F518100283007 /* NSDate+Dogo.m */; };
+		5EADB2C71B9CABDA0088D43A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EADB2C41B9CABDA0088D43A /* main.m */; };
+		5EB789E31B9CBC1E0007270F /* DGArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB789E21B9CBC1E0007270F /* DGArticleDetailViewController.m */; };
+		5EB789E91B9CC7240007270F /* UIColor+Dogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB789E81B9CC7240007270F /* UIColor+Dogo.m */; };
+		5EE974401B9DF5B200EDBABB /* DGArticleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE9743F1B9DF5B200EDBABB /* DGArticleFetcher.m */; };
 		5EEEBA941B99E36600D0AB9A /* DogoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EEEBA931B99E36600D0AB9A /* DogoTests.m */; };
-		5EF057E31B9A08E200A1F632 /* ChallengeSpecs in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D41B9A08E200A1F632 /* ChallengeSpecs */; };
+		5EF057E31B9A08E200A1F632 /* Challenge Specs in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D41B9A08E200A1F632 /* Challenge Specs */; };
 		5EF057E51B9A08E200A1F632 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057D91B9A08E200A1F632 /* LaunchScreen.xib */; };
 		5EF057E61B9A08E200A1F632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057DB1B9A08E200A1F632 /* Main.storyboard */; };
 		5EF057E71B9A08E200A1F632 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057DD1B9A08E200A1F632 /* Images.xcassets */; };
-		5EF057E81B9A08E200A1F632 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF057E01B9A08E200A1F632 /* AppDelegate.m */; };
-		5EF057EC1B9A0A6500A1F632 /* Dogo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5EF057EA1B9A0A6500A1F632 /* Dogo.xcdatamodeld */; };
-		5EF057EF1B9A0CDA00A1F632 /* Challenge JSON in Resources */ = {isa = PBXBuildFile; fileRef = 5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */; };
-		5EF9417F1B9A2C910010D997 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF9417E1B9A2C910010D997 /* ViewController.m */; };
+		5EF057E81B9A08E200A1F632 /* DGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF057E01B9A08E200A1F632 /* DGAppDelegate.m */; };
+		5EF95F0D1BA07C4F00642F8D /* NSMutalbeArray+DGArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF95F0C1BA07C4F00642F8D /* NSMutalbeArray+DGArticle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,23 +41,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E2E0CBF1B9CADD400860A9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5E2E0CC51B9CB37600860A9D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5E2E0CC61B9CB37600860A9D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		5E2E0CC71B9CB37600860A9D /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5E35E6A41B9F636100E7F7F7 /* DGDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DGDatabase.h; path = Database/DGDatabase.h; sourceTree = "<group>"; };
+		5E35E6A51B9F636100E7F7F7 /* DGDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DGDatabase.m; path = Database/DGDatabase.m; sourceTree = "<group>"; };
+		5E35E6AD1BA0627100E7F7F7 /* DGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DGUtils.h; path = Util/DGUtils.h; sourceTree = "<group>"; };
+		5E35E6AE1BA0627100E7F7F7 /* DGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DGUtils.m; path = Util/DGUtils.m; sourceTree = "<group>"; };
+		5E5141111B9BA09300E2726C /* DGArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticle.h; sourceTree = "<group>"; };
+		5E5141121B9BA09300E2726C /* DGArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticle.m; sourceTree = "<group>"; };
+		5E5141261B9BAC7600E2726C /* DGArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticlesViewController.h; sourceTree = "<group>"; };
+		5E5141271B9BAC7600E2726C /* DGArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticlesViewController.m; sourceTree = "<group>"; };
+		5E8E000E1B9F270C00283007 /* DGArticleDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleDAO.h; sourceTree = "<group>"; };
+		5E8E000F1B9F270C00283007 /* DGArticleDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleDAO.m; sourceTree = "<group>"; };
+		5E8E00161B9F4C7F00283007 /* DGArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleCell.h; sourceTree = "<group>"; };
+		5E8E00171B9F4C7F00283007 /* DGArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleCell.m; sourceTree = "<group>"; };
+		5E8E00181B9F4C7F00283007 /* DGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGLabel.h; sourceTree = "<group>"; };
+		5E8E00191B9F4C7F00283007 /* DGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGLabel.m; sourceTree = "<group>"; };
+		5E8E001D1B9F518100283007 /* NSDate+Dogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Dogo.h"; path = "Category/NSDate+Dogo.h"; sourceTree = "<group>"; };
+		5E8E001E1B9F518100283007 /* NSDate+Dogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Dogo.m"; path = "Category/NSDate+Dogo.m"; sourceTree = "<group>"; };
+		5EADB2C31B9CABDA0088D43A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EADB2C41B9CABDA0088D43A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5EADB2C51B9CABDA0088D43A /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		5EB789E11B9CBC1E0007270F /* DGArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleDetailViewController.h; sourceTree = "<group>"; };
+		5EB789E21B9CBC1E0007270F /* DGArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleDetailViewController.m; sourceTree = "<group>"; };
+		5EB789E71B9CC7240007270F /* UIColor+Dogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Dogo.h"; path = "Category/UIColor+Dogo.h"; sourceTree = "<group>"; };
+		5EB789E81B9CC7240007270F /* UIColor+Dogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Dogo.m"; path = "Category/UIColor+Dogo.m"; sourceTree = "<group>"; };
+		5EE9743E1B9DF5B200EDBABB /* DGArticleFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGArticleFetcher.h; sourceTree = "<group>"; };
+		5EE9743F1B9DF5B200EDBABB /* DGArticleFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGArticleFetcher.m; sourceTree = "<group>"; };
 		5EEEBA711B99E36500D0AB9A /* Dogo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dogo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EEEBA751B99E36500D0AB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5EEEBA761B99E36500D0AB9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5EEEBA8D1B99E36600D0AB9A /* DogoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EEEBA921B99E36600D0AB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EEEBA931B99E36600D0AB9A /* DogoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogoTests.m; sourceTree = "<group>"; };
-		5EF057D41B9A08E200A1F632 /* ChallengeSpecs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChallengeSpecs; sourceTree = "<group>"; };
+		5EF057D41B9A08E200A1F632 /* Challenge Specs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Challenge Specs"; sourceTree = "<group>"; };
 		5EF057DA1B9A08E200A1F632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5EF057DC1B9A08E200A1F632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EF057DD1B9A08E200A1F632 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5EF057DF1B9A08E200A1F632 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5EF057E01B9A08E200A1F632 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5EF057EB1B9A0A6500A1F632 /* Dogo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dogo.xcdatamodel; sourceTree = "<group>"; };
-		5EF057ED1B9A0B9300A1F632 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Challenge JSON"; sourceTree = "<group>"; };
-		5EF9417D1B9A2C910010D997 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5EF9417E1B9A2C910010D997 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5EF057DF1B9A08E200A1F632 /* DGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGAppDelegate.h; sourceTree = "<group>"; };
+		5EF057E01B9A08E200A1F632 /* DGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGAppDelegate.m; sourceTree = "<group>"; };
+		5EF95F0B1BA07C4F00642F8D /* NSMutableArray+DGArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+DGArticle.h"; path = "Category/NSMutableArray+DGArticle.h"; sourceTree = "<group>"; };
+		5EF95F0C1BA07C4F00642F8D /* NSMutalbeArray+DGArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutalbeArray+DGArticle.m"; path = "Category/NSMutalbeArray+DGArticle.m"; sourceTree = "<group>"; };
 		75D5BCA0500DF83D419907FC /* libPods-Dogo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dogo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DBDC106F539E8A88FE34543 /* Pods-Dogo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dogo/Pods-Dogo.debug.xcconfig"; sourceTree = "<group>"; };
 		ED697685EE6E59952D79EC9D /* Pods-Dogo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dogo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dogo/Pods-Dogo.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +115,72 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5E35E6A31B9F632500E7F7F7 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				5E35E6A41B9F636100E7F7F7 /* DGDatabase.h */,
+				5E35E6A51B9F636100E7F7F7 /* DGDatabase.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		5E35E6B01BA0627600E7F7F7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5E35E6AD1BA0627100E7F7F7 /* DGUtils.h */,
+				5E35E6AE1BA0627100E7F7F7 /* DGUtils.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		5E5141101B9BA09300E2726C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E5141111B9BA09300E2726C /* DGArticle.h */,
+				5E5141121B9BA09300E2726C /* DGArticle.m */,
+				5E8E000E1B9F270C00283007 /* DGArticleDAO.h */,
+				5E8E000F1B9F270C00283007 /* DGArticleDAO.m */,
+				5EE9743E1B9DF5B200EDBABB /* DGArticleFetcher.h */,
+				5EE9743F1B9DF5B200EDBABB /* DGArticleFetcher.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E5141231B9BAC7600E2726C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E5141261B9BAC7600E2726C /* DGArticlesViewController.h */,
+				5E5141271B9BAC7600E2726C /* DGArticlesViewController.m */,
+				5EB789E11B9CBC1E0007270F /* DGArticleDetailViewController.h */,
+				5EB789E21B9CBC1E0007270F /* DGArticleDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5E8E00141B9F4C7F00283007 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E8E00161B9F4C7F00283007 /* DGArticleCell.h */,
+				5E8E00171B9F4C7F00283007 /* DGArticleCell.m */,
+				5E8E00181B9F4C7F00283007 /* DGLabel.h */,
+				5E8E00191B9F4C7F00283007 /* DGLabel.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5EB789EA1B9CC73C0007270F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5EB789E71B9CC7240007270F /* UIColor+Dogo.h */,
+				5EB789E81B9CC7240007270F /* UIColor+Dogo.m */,
+				5E8E001D1B9F518100283007 /* NSDate+Dogo.h */,
+				5E8E001E1B9F518100283007 /* NSDate+Dogo.m */,
+				5EF95F0B1BA07C4F00642F8D /* NSMutableArray+DGArticle.h */,
+				5EF95F0C1BA07C4F00642F8D /* NSMutalbeArray+DGArticle.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		5EEEBA681B99E36500D0AB9A = {
 			isa = PBXGroup;
 			children = (
@@ -105,22 +205,10 @@
 			isa = PBXGroup;
 			children = (
 				5EF057DE1B9A08E200A1F632 /* src */,
-				5EF057D31B9A08E200A1F632 /* docs */,
 				5EF057D81B9A08E200A1F632 /* res */,
-				5EEEBA741B99E36500D0AB9A /* Supporting Files */,
+				5EF057D31B9A08E200A1F632 /* docs */,
 			);
 			path = Dogo;
-			sourceTree = "<group>";
-		};
-		5EEEBA741B99E36500D0AB9A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5EEEBA751B99E36500D0AB9A /* Info.plist */,
-				5EEEBA761B99E36500D0AB9A /* main.m */,
-				5EF057ED1B9A0B9300A1F632 /* Prefix.pch */,
-			);
-			name = "Supporting Files";
-			path = supporting;
 			sourceTree = "<group>";
 		};
 		5EEEBA901B99E36600D0AB9A /* DogoTests */ = {
@@ -143,8 +231,7 @@
 		5EF057D31B9A08E200A1F632 /* docs */ = {
 			isa = PBXGroup;
 			children = (
-				5EF057D41B9A08E200A1F632 /* ChallengeSpecs */,
-				5EF057EE1B9A0CDA00A1F632 /* Challenge JSON */,
+				5EF057D41B9A08E200A1F632 /* Challenge Specs */,
 			);
 			path = docs;
 			sourceTree = "<group>";
@@ -152,10 +239,13 @@
 		5EF057D81B9A08E200A1F632 /* res */ = {
 			isa = PBXGroup;
 			children = (
+				5EADB2C31B9CABDA0088D43A /* Info.plist */,
+				5EADB2C41B9CABDA0088D43A /* main.m */,
+				5EADB2C51B9CABDA0088D43A /* Prefix.pch */,
 				5EF057D91B9A08E200A1F632 /* LaunchScreen.xib */,
 				5EF057DB1B9A08E200A1F632 /* Main.storyboard */,
 				5EF057DD1B9A08E200A1F632 /* Images.xcassets */,
-				5EF057EA1B9A0A6500A1F632 /* Dogo.xcdatamodeld */,
+				5E2E0CBE1B9CADD400860A9D /* Localizable.strings */,
 			);
 			path = res;
 			sourceTree = "<group>";
@@ -163,10 +253,14 @@
 		5EF057DE1B9A08E200A1F632 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				5EF057DF1B9A08E200A1F632 /* AppDelegate.h */,
-				5EF057E01B9A08E200A1F632 /* AppDelegate.m */,
-				5EF9417D1B9A2C910010D997 /* ViewController.h */,
-				5EF9417E1B9A2C910010D997 /* ViewController.m */,
+				5EF057DF1B9A08E200A1F632 /* DGAppDelegate.h */,
+				5EF057E01B9A08E200A1F632 /* DGAppDelegate.m */,
+				5E5141101B9BA09300E2726C /* Model */,
+				5E5141231B9BAC7600E2726C /* Controller */,
+				5E8E00141B9F4C7F00283007 /* View */,
+				5EB789EA1B9CC73C0007270F /* Category */,
+				5E35E6A31B9F632500E7F7F7 /* Database */,
+				5E35E6B01BA0627600E7F7F7 /* Util */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -244,6 +338,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 5EEEBA681B99E36500D0AB9A;
 			productRefGroup = 5EEEBA721B99E36500D0AB9A /* Products */;
@@ -262,10 +357,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EF057E61B9A08E200A1F632 /* Main.storyboard in Resources */,
+				5E2E0CC01B9CADD400860A9D /* Localizable.strings in Resources */,
 				5EF057E71B9A08E200A1F632 /* Images.xcassets in Resources */,
 				5EF057E51B9A08E200A1F632 /* LaunchScreen.xib in Resources */,
-				5EF057EF1B9A0CDA00A1F632 /* Challenge JSON in Resources */,
-				5EF057E31B9A08E200A1F632 /* ChallengeSpecs in Resources */,
+				5EF057E31B9A08E200A1F632 /* Challenge Specs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,10 +411,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EEEBA771B99E36500D0AB9A /* main.m in Sources */,
-				5EF057EC1B9A0A6500A1F632 /* Dogo.xcdatamodeld in Sources */,
-				5EF9417F1B9A2C910010D997 /* ViewController.m in Sources */,
-				5EF057E81B9A08E200A1F632 /* AppDelegate.m in Sources */,
+				5E51411C1B9BA09300E2726C /* DGArticle.m in Sources */,
+				5E5141301B9BAC7600E2726C /* DGArticlesViewController.m in Sources */,
+				5EB789E91B9CC7240007270F /* UIColor+Dogo.m in Sources */,
+				5E35E6AF1BA0627100E7F7F7 /* DGUtils.m in Sources */,
+				5E8E001C1B9F4C7F00283007 /* DGLabel.m in Sources */,
+				5EB789E31B9CBC1E0007270F /* DGArticleDetailViewController.m in Sources */,
+				5E8E001B1B9F4C7F00283007 /* DGArticleCell.m in Sources */,
+				5EF95F0D1BA07C4F00642F8D /* NSMutalbeArray+DGArticle.m in Sources */,
+				5EE974401B9DF5B200EDBABB /* DGArticleFetcher.m in Sources */,
+				5E8E001F1B9F518100283007 /* NSDate+Dogo.m in Sources */,
+				5EADB2C71B9CABDA0088D43A /* main.m in Sources */,
+				5E8E00101B9F270C00283007 /* DGArticleDAO.m in Sources */,
+				5E35E6A61B9F636100E7F7F7 /* DGDatabase.m in Sources */,
+				5EF057E81B9A08E200A1F632 /* DGAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,10 +447,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5E2E0CBE1B9CADD400860A9D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E2E0CBF1B9CADD400860A9D /* en */,
+				5E2E0CC71B9CB37600860A9D /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5EF057D91B9A08E200A1F632 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5EF057DA1B9A08E200A1F632 /* Base */,
+				5E2E0CC51B9CB37600860A9D /* pt-BR */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -354,6 +469,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5EF057DC1B9A08E200A1F632 /* Base */,
+				5E2E0CC61B9CB37600860A9D /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -447,8 +563,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Dogo/supporting/Prefix.pch;
-				INFOPLIST_FILE = Dogo/supporting/Info.plist;
+				GCC_PREFIX_HEADER = Dogo/res/Prefix.pch;
+				INFOPLIST_FILE = Dogo/res/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -461,8 +577,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Dogo/supporting/Prefix.pch;
-				INFOPLIST_FILE = Dogo/supporting/Info.plist;
+				GCC_PREFIX_HEADER = Dogo/res/Prefix.pch;
+				INFOPLIST_FILE = Dogo/res/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -534,19 +650,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		5EF057EA1B9A0A6500A1F632 /* Dogo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				5EF057EB1B9A0A6500A1F632 /* Dogo.xcdatamodel */,
-			);
-			currentVersion = 5EF057EB1B9A0A6500A1F632 /* Dogo.xcdatamodel */;
-			path = Dogo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 5EEEBA691B99E36500D0AB9A /* Project object */;
 }
