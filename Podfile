@@ -7,6 +7,8 @@ pod 'FMDB'
 pod 'AFNetworking'
 pod 'AFNetworkActivityLogger'
 pod 'KVNProgress’
+pod 'Fabric'
+pod 'Crashlytics'
 
 end
 
