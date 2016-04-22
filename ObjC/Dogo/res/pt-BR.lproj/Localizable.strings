@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  Dogo
+
+  Created by Marsal on 06/09/15.
+  Copyright (c) 2015 Marsal Silveira. All rights reserved.
+*/
+
+/*
+ * Localized strings from Portuguese(Brazil) Language
+ */
+
+"[OK]" = "Fechar";
+"[Cancel]" = "Cancelar";
+"[Yes]" = "Sim";
+"[No]" = "Não";
+
+"[Error Retrieving Articles]" = "Erro Recuperando Artigos";
+
+"[by]" = "por";
+"[on]" = "em";
+
+"[Loading]" = "Carregando...";
+"[Loading Articles]" = "Carregando Artigos...";
+
+"[No Articles]" = "Não há Artigos para serem mostrados";
+
+"[Sort by]" = "Ordernar por";
+
+"[Website]" = "Site";
+"[Authors]" = "Autores";
+"[Date]" = "Data";
+"[Title]" = "Titulo";
+
+"[Localized Date Format]" = "dd/MM/yyyy";
+
+"[Reset Articles Title]" = "Resetar Artigos";
+"[Reset Articles Message]" = "Isto irá limpar todos os Artigos salvos no app e busca-los novamente da web.\nConfirma ?";
