@@ -1,0 +1,18 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'Dogo' do
+
+pod 'Alamofire'
+pod 'HanekeSwift'
+pod 'Gloss'
+
+end
+
+target 'DogoTests' do
+
+end
+
+target 'DogoUITests' do
+
+end
